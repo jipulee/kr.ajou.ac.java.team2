@@ -29,9 +29,10 @@ public class MainFrame extends JFrame {
 	private JPanel contentPane;
 	private ChoiceQuestionPanel_1 cqp_1;
 	private ChoiceQuestionPanel_2 cqp_2;
-	public static final String FIRST = "first";
-	public static final String SECOND = "second";
-	public static final String THIRD = "third";
+	private ChoiceQuestionPanel_3 cqp_3;
+	public static final String ONE = "one";
+	public static final String TWO = "two";
+	public static final String THREE = "three";
 
 	/**
 	 * Launch the application.
@@ -70,9 +71,11 @@ public class MainFrame extends JFrame {
 		
 		cqp_1 = new ChoiceQuestionPanel_1();
 		cqp_2 = new ChoiceQuestionPanel_2();
+		cqp_3 = new ChoiceQuestionPanel_3();
 		
-		cardPanel.add(cqp_1);
-		cardPanel.add(cqp_2);
+		cardPanel.add(cqp_1,ONE);
+		cardPanel.add(cqp_2,TWO);
+		cardPanel.add(cqp_3,THREE);
 		
 		cardPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		
@@ -132,6 +135,14 @@ public class MainFrame extends JFrame {
 		);
 		
 		JButton btnNewButton_2 = new JButton("1");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, ONE);
+				
+			}
+		});
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -139,9 +150,23 @@ public class MainFrame extends JFrame {
 		btnNewButton_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
 		JButton button = new JButton("2");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, TWO);
+			}
+		});
 		button.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
 		JButton button_1 = new JButton("3");
+		button_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, THREE);
+			}
+		});
 		button_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
 		JButton button_2 = new JButton("4");
