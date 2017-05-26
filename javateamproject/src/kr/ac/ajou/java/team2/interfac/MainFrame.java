@@ -1,4 +1,4 @@
-package kr.ac.ajou.java.team2;
+package kr.ac.ajou.java.team2.interfac;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;

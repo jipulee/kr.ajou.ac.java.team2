@@ -1,7 +1,7 @@
 /**
  * 
  */
-package kr.ac.ajou.java.team2;
+package kr.ac.ajou.java.team2.interfac;
 
 /**
  * @author Khalil

@@ -1,4 +1,4 @@
-package kr.ac.ajou.java.team2;
+package kr.ac.ajou.java.team2.interfac;
 
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;

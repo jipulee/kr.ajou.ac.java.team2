@@ -1,4 +1,4 @@
-package kr.ac.ajou.java.team2;
+package kr.ac.ajou.java.team2.interfac;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -30,6 +30,7 @@ public class StartFrame extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -42,7 +43,7 @@ public class StartFrame extends JFrame {
 			}
 		});
 	}
-
+	*/
 	/**
 	 * Create the frame.
 	 */
