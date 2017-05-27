@@ -22,7 +22,7 @@ import javax.swing.UIManager;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class StartFrame extends JFrame {
+public class MenuFrame extends JFrame {
 	private MainFrame mainFrame;
 
 	private JPanel contentPane;
@@ -47,7 +47,7 @@ public class StartFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public StartFrame() {
+	public MenuFrame() {
 		setTitle("Java text system");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);

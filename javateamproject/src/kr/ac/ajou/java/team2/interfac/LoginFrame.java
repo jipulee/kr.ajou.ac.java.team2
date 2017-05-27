@@ -72,7 +72,7 @@ public class LoginFrame extends JFrame {
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
-								StartFrame frame = new StartFrame();
+								MenuFrame frame = new MenuFrame();
 								frame.setVisible(true);
 							} catch (Exception e) {
 								e.printStackTrace();
@@ -90,13 +90,13 @@ public class LoginFrame extends JFrame {
 		});
 		loginBtn.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
 		
-		JButton rigister = new JButton("Rigister");
-		rigister.addActionListener(new ActionListener() {
+		JButton register = new JButton("Register");
+		register.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							RigisterFrame frame = new RigisterFrame();
+							RegisterFrame frame = new RegisterFrame();
 							frame.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -106,12 +106,12 @@ public class LoginFrame extends JFrame {
 				setVisible(false);
 			}
 		});
-		rigister.addMouseListener(new MouseAdapter() {
+		register.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		rigister.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		register.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -122,7 +122,7 @@ public class LoginFrame extends JFrame {
 							.addGap(76)
 							.addComponent(loginBtn, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE)
 							.addGap(61)
-							.addComponent(rigister, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(register, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(29, Short.MAX_VALUE))
 				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
 					.addContainerGap(142, Short.MAX_VALUE)
@@ -139,7 +139,7 @@ public class LoginFrame extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(loginBtn)
-						.addComponent(rigister, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+						.addComponent(register, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(49, Short.MAX_VALUE))
 		);
 		

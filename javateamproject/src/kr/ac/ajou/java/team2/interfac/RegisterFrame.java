@@ -19,7 +19,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class RigisterFrame extends JFrame {
+public class RegisterFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -47,7 +47,7 @@ public class RigisterFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public RigisterFrame() {
+	public RegisterFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 461, 279);
 		contentPane = new JPanel();
