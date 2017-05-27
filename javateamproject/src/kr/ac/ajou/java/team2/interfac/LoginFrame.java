@@ -90,19 +90,28 @@ public class LoginFrame extends JFrame {
 		});
 		loginBtn.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
 		
-		JButton Exit = new JButton("Exit");
-		Exit.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				 if(e.getSource() == Exit)  
-			        {  
-			            int i = JOptionPane.showConfirmDialog(null,"sure to quit£¿", "confirm", JOptionPane.YES_NO_OPTION);  
-			            if(i == JOptionPane.YES_OPTION);  
-			            System.exit(0);  
-			        }  
+		JButton rigister = new JButton("Rigister");
+		rigister.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							RigisterFrame frame = new RigisterFrame();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
 			}
 		});
-		Exit.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		rigister.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		rigister.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -113,7 +122,7 @@ public class LoginFrame extends JFrame {
 							.addGap(76)
 							.addComponent(loginBtn, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE)
 							.addGap(61)
-							.addComponent(Exit, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(rigister, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(29, Short.MAX_VALUE))
 				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
 					.addContainerGap(142, Short.MAX_VALUE)
@@ -130,7 +139,7 @@ public class LoginFrame extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(loginBtn)
-						.addComponent(Exit, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+						.addComponent(rigister, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(49, Short.MAX_VALUE))
 		);
 		
