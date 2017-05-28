@@ -27,17 +27,17 @@ public class ChoiceQuestionPanel_1 extends JPanel {
 		JButton btnNewButton = new JButton("A.String s1 = null;");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnBstringS = new JButton("B.String s2 = &#39;null&#39;;");
+		JButton btnBstringS = new JButton("B.String s2 = 'null';");
 		btnBstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		btnBstringS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnCstringS = new JButton("C.String s3 = (String) &#39;abc&#39;;");
+		JButton btnCstringS = new JButton("C.String s3 = (String) 'abc';");
 		btnCstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnDstringS = new JButton("D.String s4 = (String) &#39;\\ufeed&#39;;");
+		JButton btnDstringS = new JButton("D.String s4 = (String) '\ufeed';");
 		btnDstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
