@@ -30,9 +30,20 @@ public class MainFrame extends JFrame {
 	private ChoiceQuestionPanel_1 cqp_1;
 	private ChoiceQuestionPanel_2 cqp_2;
 	private ChoiceQuestionPanel_3 cqp_3;
+	private SubjectiveQuestionPanel_31 sqp_31;
+	private SubjectiveQuestionPanel_32 sqp_32;
+	private SubjectiveQuestionPanel_33 sqp_33;
+	private SubjectiveQuestionPanel_34 sqp_34;
+	private SubjectiveQuestionPanel_35 sqp_35;
 	public static final String ONE = "one";
 	public static final String TWO = "two";
 	public static final String THREE = "three";
+	public static final String THIRTYONE = "thirty-one";
+	public static final String THIRTYTWO = "thirty-two";
+	public static final String THIRTYTHREE = "thirty-three";
+	public static final String THIRTYFOUR = "thirty-four";
+	public static final String THIRTYFIVE = "thirty-five";
+	
 
 	/**
 	 * Launch the application.
@@ -72,10 +83,20 @@ public class MainFrame extends JFrame {
 		cqp_1 = new ChoiceQuestionPanel_1();
 		cqp_2 = new ChoiceQuestionPanel_2();
 		cqp_3 = new ChoiceQuestionPanel_3();
+		sqp_31= new SubjectiveQuestionPanel_31();
+		sqp_32= new SubjectiveQuestionPanel_32();
+		sqp_33= new SubjectiveQuestionPanel_33();
+		sqp_34= new SubjectiveQuestionPanel_34();
+		sqp_35= new SubjectiveQuestionPanel_35();
 		
 		cardPanel.add(cqp_1,ONE);
 		cardPanel.add(cqp_2,TWO);
 		cardPanel.add(cqp_3,THREE);
+		cardPanel.add(sqp_31,THIRTYONE);
+		cardPanel.add(sqp_32,THIRTYTWO);
+		cardPanel.add(sqp_33,THIRTYTHREE);
+		cardPanel.add(sqp_34,THIRTYFOUR);
+		cardPanel.add(sqp_35,THIRTYFIVE);
 		
 		cardPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		

@@ -9,12 +9,12 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class ChoiceQuestionPanel_32 extends JPanel {
+public class SubjectiveQuestionPanel_32 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_32() {
+	public SubjectiveQuestionPanel_32() {
 		
 		JLabel lblNewLabel = new JLabel("Question 32");
 		lblNewLabel.setBounds(18, 20, 127, 29);

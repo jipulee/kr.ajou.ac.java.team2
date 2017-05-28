@@ -6,12 +6,12 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class ChoiceQuestionPanel_34 extends JPanel {
+public class SubjectiveQuestionPanel_34 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_34() {
+	public SubjectiveQuestionPanel_34() {
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Question 34");
