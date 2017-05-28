@@ -14,10 +14,10 @@ public class PartBquesPanel_10 extends JPanel {
 	 */
 	public PartBquesPanel_10() {
 		
-		JLabel lblNewLabel = new JLabel("Question.");
-		
-		JLabel lblNewLabel_1 = new JLabel("How old are you?");
-		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel = new JLabel("Question.30(Bonus question)The following question is more difficult than the previous nine questions, and is included here to challenge you if the previous nine questions have been too easy.");
+		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel_1 = new JLabel("Consider the following simple program, which initializes the instance variable named myIntVar to a value of 10 when the instance variable is initialized.What value will be displayed by this program? ");
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();
 		textField.setColumns(10);

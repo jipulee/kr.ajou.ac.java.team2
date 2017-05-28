@@ -14,10 +14,11 @@ public class PartBquesPanel_4 extends JPanel {
 	 */
 	public PartBquesPanel_4() {
 		
-		JLabel lblNewLabel = new JLabel("Question.");
+		JLabel lblNewLabel = new JLabel("Question.24");
+		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_1 = new JLabel("How old are you?");
-		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel_1 = new JLabel("True or false?  The default for a floating-point literal without an F or a D is a 32-bit float");
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();
 		textField.setColumns(10);

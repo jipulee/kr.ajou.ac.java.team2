@@ -14,10 +14,10 @@ public class PartBquesPanel_9 extends JPanel {
 	 */
 	public PartBquesPanel_9() {
 		
-		JLabel lblNewLabel = new JLabel("Question.");
-		
-		JLabel lblNewLabel_1 = new JLabel("How old are you?");
-		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel = new JLabel("Question.29");
+		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel_1 = new JLabel("True or false?  The size of a Java array can be specified using a variable or a literal.");
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();
 		textField.setColumns(10);

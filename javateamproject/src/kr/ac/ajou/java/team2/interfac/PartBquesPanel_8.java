@@ -14,10 +14,10 @@ public class PartBquesPanel_8 extends JPanel {
 	 */
 	public PartBquesPanel_8() {
 		
-		JLabel lblNewLabel = new JLabel("Question.");
-		
-		JLabel lblNewLabel_1 = new JLabel("How old are you?");
-		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel = new JLabel("Question.28");
+		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel_1 = new JLabel("There are two different formats that can be used to declare a reference variable capable of containing a reference to a single-dimensional array. What are they?");
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();
 		textField.setColumns(10);
