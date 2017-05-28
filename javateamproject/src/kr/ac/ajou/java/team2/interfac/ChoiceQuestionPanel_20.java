@@ -20,8 +20,8 @@ public class ChoiceQuestionPanel_20 extends JPanel {
 		JLabel lblNewLabel = new JLabel("Quention 20");
 		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("What is the most restrictive access modifier that will allow members of one class to have access to members of another class in the same package?");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the most restrictive access modifier that will allow <br>members of one class to have access to members of another class in the same package?</html>");
+
 		
 		JButton btnNewButton = new JButton("A. public");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);

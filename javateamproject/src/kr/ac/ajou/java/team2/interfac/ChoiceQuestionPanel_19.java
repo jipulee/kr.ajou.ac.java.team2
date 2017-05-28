@@ -20,8 +20,8 @@ public class ChoiceQuestionPanel_19 extends JPanel {
 		JLabel lblNewLabel = new JLabel("Quention 19");
 		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("Which of the following is/are legal method declarations[?]\r\n 1. protected abstract void m1\\(\\);\r\n 2.static final void m1\\(\\)\\{\\}\r\n 3.synchronized public final void m1\\(\\) \\{\\}\r\n 4.private native void m1\\(\\); ");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
+		JLabel lblNewLabel_1 = new JLabel("<html>Which of the following is/are legal method declarations?<br>1. protected abstract void m1();<br>2.static final void m1(){}<br>3.synchronized public final void m1() {}<br>4.private native void m1(); </html>");
+
 		
 		JButton btnNewButton = new JButton("A. 1 and 3");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);

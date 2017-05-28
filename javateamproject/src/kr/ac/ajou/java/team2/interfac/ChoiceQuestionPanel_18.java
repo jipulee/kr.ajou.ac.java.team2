@@ -20,8 +20,8 @@ public class ChoiceQuestionPanel_18 extends JPanel {
 		JLabel lblNewLabel = new JLabel("Quention 18");
 		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("What two statements are true about properly overridden hashCode\\(\\) and equals\\(\\) methods[?] \r\n1.	hashCode\\(\\) doesn't have to be overridden if equals\\(\\) is.\r\n2.	equals\\(\\) doesn't have to be overridden if hashCode\\(\\) is.\r\n3.	hashCode\\(\\) can always return the same value, regardless of the object that invoked it. \r\n4. equals\\(\\) can be true even if it's comparing different objects.");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
+		JLabel lblNewLabel_1 = new JLabel("<html>What two statements are true about properly overridden hashCode\\(\\) and equals() methods? <br>1.	hashCode() doesn't have to be overridden if equals() is.<br>2.	equals() doesn't have to be overridden if hashCode() is.<br>3.	hashCode() can always return the same value, regardless of the object that invoked it.<br>4. equals() can be true even if it's comparing different objects.</html>");
+
 		
 		JButton btnNewButton = new JButton("A. 1 and 2");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);

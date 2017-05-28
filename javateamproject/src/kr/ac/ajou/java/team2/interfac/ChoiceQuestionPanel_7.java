@@ -20,8 +20,8 @@ public class ChoiceQuestionPanel_7 extends JPanel {
 		JLabel lblNewLabel = new JLabel("Quention 7");
 		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("Which collection class allows you to access its elements by associating a key with an element's value, and provides synchronization?");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
+		JLabel lblNewLabel_1 = new JLabel("<html>Which collection class allows you to access its elements <br>by associating a key with an element's value, and provides synchronization?</html>");
+
 		
 		JButton btnNewButton = new JButton("A.java.util.SortedMap");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);

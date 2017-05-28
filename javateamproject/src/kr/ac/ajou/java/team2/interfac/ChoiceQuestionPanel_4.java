@@ -22,7 +22,7 @@ public class ChoiceQuestionPanel_4 extends JPanel {
 	public ChoiceQuestionPanel_4() {
 		JLabel lblNewLabel_1 = new JLabel("Question 4");
 		
-		JLabel lblNewLabel_2 = new JLabel("the static method Thread.currentThread() returns a reference to the currently executing Thread object. What is the result of this code?");
+		JLabel lblNewLabel_2 = new JLabel("<html>the static method Thread.currentThread() returns <br>a reference to the currently executing Thread object. <br>What is the result of this code?</html>");
 		Image img = new ImageIcon("q4.jpg").getImage();
 		JTextArea textArea = new JTextArea(){
 			{setOpaque(false);}
@@ -39,9 +39,9 @@ public class ChoiceQuestionPanel_4 extends JPanel {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("B. Each String in the array lines will output, with no pause in between because this method is not executed in a Thread.");
+		JButton btnNewButton_1 = new JButton("<html>B. Each String in the array lines will output, <br>with no pause in between because this method is not executed in a Thread.</html>");
 		
-		JButton btnNewButton_2 = new JButton("C. Each String in the array lines will output, and there is no guarantee there will be a pause because currentThread() may not retrieve this thread");
+		JButton btnNewButton_2 = new JButton("<html>C. Each String in the array lines will output, <br>and there is no guarantee there will be a pause because currentThread() may not retrieve this thread</html>");
 		
 		JButton btnNewButton_3 = new JButton("D. This code will not compile ");
 

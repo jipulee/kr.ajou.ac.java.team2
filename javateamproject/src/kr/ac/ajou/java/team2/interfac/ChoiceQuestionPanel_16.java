@@ -23,7 +23,7 @@ public class ChoiceQuestionPanel_16 extends JPanel {
 		JLabel lblNewLabel_1 = new JLabel("Which of the following statements is true?");
 		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
 		
-		JButton btnNewButton = new JButton("A.If assertions are compiled into a source file, and if no flags are included at runtime, assertions will execute by default.");
+		JButton btnNewButton = new JButton("<html>A.If assertions are compiled into a source file, <br>and if no flags are included at runtime, assertions will execute by default.</html>");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		JButton btnBstringS = new JButton("B.As of Java version 1.4, assertion statements are compiled by default.");
@@ -33,7 +33,7 @@ public class ChoiceQuestionPanel_16 extends JPanel {
 			}
 		});
 		
-		JButton btnCstringS = new JButton("C.With the proper use of runtime arguments, it is possible to instruct the VM to disable assertions for a certain class, and to enable assertions for a certain package, at the same time.");
+		JButton btnCstringS = new JButton("<html>C.With the proper use of runtime arguments, it is possible to instruct the VM to disable assertions for a certain class,<br> and to enable assertions for a certain package, at the same time.</html>");
 		btnCstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		JButton btnDstringS = new JButton("D.When evaluating command-line arguments, the VM gives -ea flags precedence over -da flags");
