@@ -2,9 +2,6 @@ package kr.ac.ajou.java.team2.interfac;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-
-import PartBquestion;
-
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
@@ -16,16 +13,13 @@ public class PartBquesPanel_2 extends JPanel {
 	 * Create the panel.
 	 */
 	public PartBquesPanel_2() {
-		PartBquestion q_1 = new PartBquestion();
-		q_1.setQuesNum(22);
-		q_1.setQuestion("How old are you?");
-		q_1.setAnswer("25");
+	
 		
+		JLabel lblNewLabel = new JLabel("Question.22");
+		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel = new JLabel("Question.");
-		
-		JLabel lblNewLabel_1 = new JLabel("How old are you?");
-		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel_1 = new JLabel("True or false?  By default, an integral literal is a 64 bit value.");
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();
 		textField.setColumns(10);

@@ -14,10 +14,11 @@ public class PartBquesPanel_3 extends JPanel {
 	 */
 	public PartBquesPanel_3() {
 		
-		JLabel lblNewLabel = new JLabel("Question.");
+		JLabel lblNewLabel = new JLabel("Question.23");
+		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_1 = new JLabel("How old are you?");
-		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel_1 = new JLabel("There are seven characters, at least one of which must be included to indicate a floating point literal.  What are they?");
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();
 		textField.setColumns(10);

@@ -3,7 +3,6 @@ import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
-import PartBquestion;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -16,16 +15,14 @@ public class PartBquesPanel_1 extends JPanel {
 	 * Create the panel.
 	 */
 	public PartBquesPanel_1() {
-		PartBquestion q_1 = new PartBquestion();
-		q_1.setQuesNum(21);
-		q_1.setQuestion("How old are you?");
-		q_1.setAnswer("25");
 		
-		JLabel lblNewLabel = new JLabel("question");
+		JLabel lblNewLabel = new JLabel("Question.21");
 		
-		JLabel lblNewLabel_1 = new JLabel("hohohoho");
+		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		
-		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		JLabel lblNewLabel_1 = new JLabel("Show six different ways to express the decimal value 28 as an integral literal.");
+		
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();
 		textField.setColumns(10);

@@ -30,48 +30,42 @@ public class MainFrame extends JFrame {
 	private ChoiceQuestionPanel_1 cqp_1;
 	private ChoiceQuestionPanel_2 cqp_2;
 	private ChoiceQuestionPanel_3 cqp_3;
-	private ChoiceQuestionPanel_4 cqp_4;
-//	private ChoiceQuestionPanel_5 cqp_5;
-//	private ChoiceQuestionPanel_6 cqp_6;
-//	private ChoiceQuestionPanel_7 cqp_7;
-//	private ChoiceQuestionPanel_8 cqp_8;
-//	private ChoiceQuestionPanel_9 cqp_9;
-//	private ChoiceQuestionPanel_10 cqp_10;
-//	private ChoiceQuestionPanel_11 cqp_11;
-//	private ChoiceQuestionPanel_12 cqp_12;
-//	private ChoiceQuestionPanel_13 cqp_13;
-//	private ChoiceQuestionPanel_14 cqp_14;
-//	private ChoiceQuestionPanel_15 cqp_15;
-//	private ChoiceQuestionPanel_16 cqp_16;
-//	private ChoiceQuestionPanel_17 cqp_17;
-//	private ChoiceQuestionPanel_18 cqp_18;
-//	private ChoiceQuestionPanel_19 cqp_19;
-//	private ChoiceQuestionPanel_20 cqp_20;
+
+	
+	private PartBquesPanel_1 pbq_1;
+	private PartBquesPanel_2 pbq_2;
+	private PartBquesPanel_3 pbq_3;
+	private PartBquesPanel_4 pbq_4;
+	private PartBquesPanel_5 pbq_5;
+	private PartBquesPanel_6 pbq_6;
+	private PartBquesPanel_7 pbq_7;
+	private PartBquesPanel_8 pbq_8;
+	private PartBquesPanel_9 pbq_9;
+	private PartBquesPanel_10 pbq_10;
+	
+
 	private SubjectiveQuestionPanel_31 sqp_31;
 	private SubjectiveQuestionPanel_32 sqp_32;
 	private SubjectiveQuestionPanel_33 sqp_33;
 	private SubjectiveQuestionPanel_34 sqp_34;
 	private SubjectiveQuestionPanel_35 sqp_35;
+	
 	public static final String ONE = "one";
 	public static final String TWO = "two";
 	public static final String THREE = "three";
-	public static final String FOUR = "four";
-//	public static final String FIVE = "five";
-//	public static final String SIX = "six";
-//	public static final String SEVEN = "seven";
-//	public static final String EIGHT = "eight";
-//	public static final String NINE = "nine";
-//	public static final String TEN = "ten";
-//	public static final String ELEVEN = "eleven";
-//	public static final String TWELVE = "twelve";
-//	public static final String THIRTEEN = "thirteen";
-//	public static final String FOURTEEN = "fourteen";
-//	public static final String FIFTEEN = "fifteen";
-//	public static final String SIXTEEN = "sixteen";
-//	public static final String SEVENTEEN = "seventeen";
-//	public static final String EIGHTEEN = "eighteen";
-//	public static final String NINETEEN = "nineteen";
-//	public static final String TWENTY = "twenty";
+
+	
+	public static final String TWENTYONE = "twentyone";
+	public static final String TWENTYTWO= "twentytwo";
+	public static final String TWENTYTHREE = "twentythree";
+	public static final String TWENTYFOUR = "twentyfour";
+	public static final String TWENTYFIVE = "twentyfive";
+	public static final String TWENTYSIX = "twentysix";
+	public static final String TWENTYSEVEN = "twentyseven";
+	public static final String TWENTYEIGHT = "twentyeight";
+	public static final String TWENTYNINE = "twentynine";
+	public static final String THIRTY= "thirty";
+	
 	public static final String THIRTYONE = "thirty-one";
 	public static final String THIRTYTWO = "thirty-two";
 	public static final String THIRTYTHREE = "thirty-three";
@@ -82,20 +76,20 @@ public class MainFrame extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	/*
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainFrame frame = new MainFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	 */
+	
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					MainFrame frame = new MainFrame();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+	 
 	/**
 	 * Create the frame.
 	 */
@@ -117,23 +111,19 @@ public class MainFrame extends JFrame {
 		cqp_1 = new ChoiceQuestionPanel_1();
 		cqp_2 = new ChoiceQuestionPanel_2();
 		cqp_3 = new ChoiceQuestionPanel_3();
-		cqp_4 = new ChoiceQuestionPanel_4();
-//		cqp_5 = new ChoiceQuestionPanel_5();
-//		cqp_6 = new ChoiceQuestionPanel_6();
-//		cqp_7 = new ChoiceQuestionPanel_7();
-//		cqp_8 = new ChoiceQuestionPanel_8();
-//		cqp_9 = new ChoiceQuestionPanel_9();
-//		cqp_10 = new ChoiceQuestionPanel_10();
-//		cqp_11 = new ChoiceQuestionPanel_11();
-//		cqp_12 = new ChoiceQuestionPanel_12();
-//		cqp_13 = new ChoiceQuestionPanel_13();
-//		cqp_14 = new ChoiceQuestionPanel_14();
-//		cqp_15 = new ChoiceQuestionPanel_15();
-//		cqp_16 = new ChoiceQuestionPanel_16();
-//		cqp_17 = new ChoiceQuestionPanel_17();
-//		cqp_18 = new ChoiceQuestionPanel_18();
-//		cqp_19 = new ChoiceQuestionPanel_19();
-//		cqp_20 = new ChoiceQuestionPanel_20();
+
+		pbq_1 = new PartBquesPanel_1 ();
+		pbq_2 = new PartBquesPanel_2 ();
+		pbq_3 = new PartBquesPanel_3 ();
+		pbq_4 = new PartBquesPanel_4 ();
+		pbq_5 = new PartBquesPanel_5 ();
+		pbq_6 = new PartBquesPanel_6 ();
+		pbq_7 = new PartBquesPanel_7 ();
+		pbq_8 = new PartBquesPanel_8 ();
+		pbq_9 = new PartBquesPanel_9 ();
+		pbq_10 = new PartBquesPanel_10 ();
+		
+
 		sqp_31= new SubjectiveQuestionPanel_31();
 		sqp_32= new SubjectiveQuestionPanel_32();
 		sqp_33= new SubjectiveQuestionPanel_33();
@@ -143,23 +133,20 @@ public class MainFrame extends JFrame {
 		cardPanel.add(cqp_1,ONE);
 		cardPanel.add(cqp_2,TWO);
 		cardPanel.add(cqp_3,THREE);
-		cardPanel.add(cqp_4,FOUR);
-//		cardPanel.add(cqp_5,FIVE);
-//		cardPanel.add(cqp_6,SIX);
-//		cardPanel.add(cqp_7,SEVEN);
-//		cardPanel.add(cqp_8,EIGHT);
-//		cardPanel.add(cqp_9,NINE);
-//		cardPanel.add(cqp_10,TEN);
-//		cardPanel.add(cqp_11,ELEVEN);
-//		cardPanel.add(cqp_12,TWELVE);
-//		cardPanel.add(cqp_13,THIRTEEN);
-//		cardPanel.add(cqp_14,FOURTEEN);
-//		cardPanel.add(cqp_15,FIFTEEN);
-//		cardPanel.add(cqp_16,SIXTEEN);
-//		cardPanel.add(cqp_17,SEVENTEEN);
-//		cardPanel.add(cqp_18,EIGHTEEN);
-//		cardPanel.add(cqp_19,NINETEEN);
-//		cardPanel.add(cqp_20,TWENTY);
+
+		
+		cardPanel.add(pbq_1,TWENTYONE);
+		cardPanel.add(pbq_2,TWENTYTWO);
+		cardPanel.add(pbq_3,TWENTYTHREE);
+		cardPanel.add(pbq_4,TWENTYFOUR);
+		cardPanel.add(pbq_5,TWENTYFIVE);
+		cardPanel.add(pbq_6,TWENTYSIX);
+		cardPanel.add(pbq_7,TWENTYSEVEN);
+		cardPanel.add(pbq_8,TWENTYEIGHT);
+		cardPanel.add(pbq_9,TWENTYNINE);
+		cardPanel.add(pbq_10,THIRTY);
+		
+
 		cardPanel.add(sqp_31,THIRTYONE);
 		cardPanel.add(sqp_32,THIRTYTWO);
 		cardPanel.add(sqp_33,THIRTYTHREE);
@@ -310,18 +297,49 @@ public class MainFrame extends JFrame {
 		button_18.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
 		JButton button_19 = new JButton("21");
-		button_19.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		button_19.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, TWENTYONE);
 			}
 		});
 		button_19.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
 		JButton button_20 = new JButton("22");
-		button_20.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		button_20.addMouseListener(new MouseAdapter() {
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			CardLayout cl = (CardLayout) (cardPanel.getLayout());
+			cl.show(cardPanel, TWENTYTWO);
+		}
+	});
 		button_20.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton button_21 = new JButton("23");
+		button_21.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton button_22 = new JButton("24");
+		button_22.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton button_23 = new JButton("25");
+		button_23.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton button_24 = new JButton("26");
+		button_24.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton button_25 = new JButton("27");
+		button_25.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton button_26 = new JButton("28");
+		button_26.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton button_27 = new JButton("29");
+		button_27.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton button_28 = new JButton("30");
+		button_28.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
@@ -403,6 +421,7 @@ public class MainFrame extends JFrame {
 						.addComponent(button_18, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
 						.addComponent(button_19, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
 						.addComponent(button_20, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+					
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
