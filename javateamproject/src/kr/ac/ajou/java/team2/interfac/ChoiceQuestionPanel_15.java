@@ -13,18 +13,15 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
-public class ChoiceQuestionPanel_2 extends JPanel {
+public class ChoiceQuestionPanel_15 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_2() {
-		
-		JLabel lblNewLabel_1 = new JLabel("Question 2");
-		
+	public ChoiceQuestionPanel_15() {
+		JLabel lblNewLabel_1 = new JLabel("Question 15");
 		JLabel lblNewLabel_2 = new JLabel("What will be the output of the program?");
-		Image img = new ImageIcon("q2.jpg").getImage();
+		Image img = new ImageIcon("q15.jpg").getImage();
 		JTextArea textArea = new JTextArea(){
 			{setOpaque(false);}
 			public void paintComponent(Graphics g){
@@ -34,17 +31,17 @@ public class ChoiceQuestionPanel_2 extends JPanel {
 			
 		};
 		
-		JButton btnNewButton = new JButton("A. j = 0");
+		JButton btnNewButton = new JButton("A. An exception occurs at runtime at line 10.");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("B. j = 4");
+		JButton btnNewButton_1 = new JButton("B. It prints \"Zippo\".");
 		
-		JButton btnNewButton_2 = new JButton("C. j = 8");
+		JButton btnNewButton_2 = new JButton("C. Compilation fails because of an error on line 7");
 		
-		JButton btnNewButton_3 = new JButton("D. The code will run with no output");
+		JButton btnNewButton_3 = new JButton("D. Compilation fails because of an error on line 13");
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -85,7 +82,7 @@ public class ChoiceQuestionPanel_2 extends JPanel {
 		setLayout(groupLayout);
 		
 
-	
 
 	}
+
 }

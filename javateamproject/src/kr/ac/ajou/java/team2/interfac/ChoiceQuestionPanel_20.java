@@ -11,33 +11,32 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
-public class ChoiceQuestionPanel_1 extends JPanel {
+public class ChoiceQuestionPanel_20 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_1() {
-		
-		JLabel lblNewLabel = new JLabel("Quention 1");
+	public ChoiceQuestionPanel_20() {
+		JLabel lblNewLabel = new JLabel("Quention 20");
 		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("Which is a valid declarations of a String?");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the most restrictive access modifier that will allow <br>members of one class to have access to members of another class in the same package?</html>");
+
 		
-		JButton btnNewButton = new JButton("A.String s1 = null;");
+		JButton btnNewButton = new JButton("A. public");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnBstringS = new JButton("B.String s2 = 'null';");
+		JButton btnBstringS = new JButton("B. abstract");
 		btnBstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		btnBstringS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnCstringS = new JButton("C.String s3 = (String) 'abc';");
+		JButton btnCstringS = new JButton("C. protected");
 		btnCstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnDstringS = new JButton("D.String s4 = (String) '\ufeed';");
+		JButton btnDstringS = new JButton("D. synchronized");
 		btnDstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -70,6 +69,7 @@ public class ChoiceQuestionPanel_1 extends JPanel {
 					.addContainerGap(24, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
-
+	
 	}
+
 }

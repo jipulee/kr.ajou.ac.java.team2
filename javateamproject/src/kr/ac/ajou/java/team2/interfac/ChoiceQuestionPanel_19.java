@@ -11,33 +11,32 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
-public class ChoiceQuestionPanel_1 extends JPanel {
+public class ChoiceQuestionPanel_19 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_1() {
-		
-		JLabel lblNewLabel = new JLabel("Quention 1");
+	public ChoiceQuestionPanel_19() {
+		JLabel lblNewLabel = new JLabel("Quention 19");
 		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("Which is a valid declarations of a String?");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
+		JLabel lblNewLabel_1 = new JLabel("<html>Which of the following is/are legal method declarations?<br>1. protected abstract void m1();<br>2.static final void m1(){}<br>3.synchronized public final void m1() {}<br>4.private native void m1(); </html>");
+
 		
-		JButton btnNewButton = new JButton("A.String s1 = null;");
+		JButton btnNewButton = new JButton("A. 1 and 3");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnBstringS = new JButton("B.String s2 = 'null';");
+		JButton btnBstringS = new JButton("B. 2 and 4");
 		btnBstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		btnBstringS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnCstringS = new JButton("C.String s3 = (String) 'abc';");
+		JButton btnCstringS = new JButton("C. 1 only");
 		btnCstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnDstringS = new JButton("D.String s4 = (String) '\ufeed';");
+		JButton btnDstringS = new JButton("D. All of them are legal declarations.");
 		btnDstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -70,6 +69,8 @@ public class ChoiceQuestionPanel_1 extends JPanel {
 					.addContainerGap(24, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
+	
 
 	}
+
 }

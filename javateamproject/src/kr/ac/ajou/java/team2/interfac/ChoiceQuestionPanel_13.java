@@ -14,17 +14,16 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ChoiceQuestionPanel_2 extends JPanel {
+public class ChoiceQuestionPanel_13 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_2() {
-		
-		JLabel lblNewLabel_1 = new JLabel("Question 2");
+	public ChoiceQuestionPanel_13() {
+		JLabel lblNewLabel_1 = new JLabel("Question 13");
 		
 		JLabel lblNewLabel_2 = new JLabel("What will be the output of the program?");
-		Image img = new ImageIcon("q2.jpg").getImage();
+		Image img = new ImageIcon("q13.jpg").getImage();
 		JTextArea textArea = new JTextArea(){
 			{setOpaque(false);}
 			public void paintComponent(Graphics g){
@@ -34,17 +33,17 @@ public class ChoiceQuestionPanel_2 extends JPanel {
 			
 		};
 		
-		JButton btnNewButton = new JButton("A. j = 0");
+		JButton btnNewButton = new JButton("A. 0");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("B. j = 4");
+		JButton btnNewButton_1 = new JButton("B. 1 ");
 		
-		JButton btnNewButton_2 = new JButton("C. j = 8");
+		JButton btnNewButton_2 = new JButton("C. 2");
 		
-		JButton btnNewButton_3 = new JButton("D. The code will run with no output");
+		JButton btnNewButton_3 = new JButton("D. Compilation fails.");
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -85,7 +84,6 @@ public class ChoiceQuestionPanel_2 extends JPanel {
 		setLayout(groupLayout);
 		
 
-	
-
 	}
+
 }

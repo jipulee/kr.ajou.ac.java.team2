@@ -11,33 +11,32 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
-public class ChoiceQuestionPanel_1 extends JPanel {
+public class ChoiceQuestionPanel_18 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_1() {
-		
-		JLabel lblNewLabel = new JLabel("Quention 1");
+	public ChoiceQuestionPanel_18() {
+		JLabel lblNewLabel = new JLabel("Quention 18");
 		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("Which is a valid declarations of a String?");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
+		JLabel lblNewLabel_1 = new JLabel("<html>What two statements are true about properly overridden hashCode\\(\\) and equals() methods? <br>1.	hashCode() doesn't have to be overridden if equals() is.<br>2.	equals() doesn't have to be overridden if hashCode() is.<br>3.	hashCode() can always return the same value, regardless of the object that invoked it.<br>4. equals() can be true even if it's comparing different objects.</html>");
+
 		
-		JButton btnNewButton = new JButton("A.String s1 = null;");
+		JButton btnNewButton = new JButton("A. 1 and 2");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnBstringS = new JButton("B.String s2 = 'null';");
+		JButton btnBstringS = new JButton("B. 2 and 3");
 		btnBstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		btnBstringS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnCstringS = new JButton("C.String s3 = (String) 'abc';");
+		JButton btnCstringS = new JButton("C. 3 and 4");
 		btnCstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnDstringS = new JButton("D.String s4 = (String) '\ufeed';");
+		JButton btnDstringS = new JButton("D. 1 and 3");
 		btnDstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -70,6 +69,6 @@ public class ChoiceQuestionPanel_1 extends JPanel {
 					.addContainerGap(24, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
-
 	}
+
 }

@@ -3,7 +3,6 @@ package kr.ac.ajou.java.team2.interfac;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.*;
-
 import javax.swing.ImageIcon;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -14,17 +13,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ChoiceQuestionPanel_2 extends JPanel {
+public class ChoiceQuestionPanel_17 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_2() {
-		
-		JLabel lblNewLabel_1 = new JLabel("Question 2");
-		
-		JLabel lblNewLabel_2 = new JLabel("What will be the output of the program?");
-		Image img = new ImageIcon("q2.jpg").getImage();
+	public ChoiceQuestionPanel_17() {
+		JLabel lblNewLabel_1 = new JLabel("Question 17");
+		JLabel lblNewLabel_2 = new JLabel("At Point X on line 5, which code is necessary to make the code compile?");
+		Image img = new ImageIcon("q17.jpg").getImage();
 		JTextArea textArea = new JTextArea(){
 			{setOpaque(false);}
 			public void paintComponent(Graphics g){
@@ -34,17 +31,17 @@ public class ChoiceQuestionPanel_2 extends JPanel {
 			
 		};
 		
-		JButton btnNewButton = new JButton("A. j = 0");
+		JButton btnNewButton = new JButton("A. No code is necessary.");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("B. j = 4");
+		JButton btnNewButton_1 = new JButton("B. throws Exception.");
 		
-		JButton btnNewButton_2 = new JButton("C. j = 8");
+		JButton btnNewButton_2 = new JButton("C. catch ( Exception e )");
 		
-		JButton btnNewButton_3 = new JButton("D. The code will run with no output");
+		JButton btnNewButton_3 = new JButton("D. throws RuntimeException");
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -85,7 +82,6 @@ public class ChoiceQuestionPanel_2 extends JPanel {
 		setLayout(groupLayout);
 		
 
-	
-
 	}
+
 }

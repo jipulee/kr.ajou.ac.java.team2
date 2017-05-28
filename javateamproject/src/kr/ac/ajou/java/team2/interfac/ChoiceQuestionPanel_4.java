@@ -14,17 +14,16 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ChoiceQuestionPanel_2 extends JPanel {
+public class ChoiceQuestionPanel_4 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_2() {
+	public ChoiceQuestionPanel_4() {
+		JLabel lblNewLabel_1 = new JLabel("Question 4");
 		
-		JLabel lblNewLabel_1 = new JLabel("Question 2");
-		
-		JLabel lblNewLabel_2 = new JLabel("What will be the output of the program?");
-		Image img = new ImageIcon("q2.jpg").getImage();
+		JLabel lblNewLabel_2 = new JLabel("<html>the static method Thread.currentThread() returns <br>a reference to the currently executing Thread object. <br>What is the result of this code?</html>");
+		Image img = new ImageIcon("q4.jpg").getImage();
 		JTextArea textArea = new JTextArea(){
 			{setOpaque(false);}
 			public void paintComponent(Graphics g){
@@ -34,17 +33,17 @@ public class ChoiceQuestionPanel_2 extends JPanel {
 			
 		};
 		
-		JButton btnNewButton = new JButton("A. j = 0");
+		JButton btnNewButton = new JButton("A. Each String in the array lines will output, with a 1-second pause.");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("B. j = 4");
+		JButton btnNewButton_1 = new JButton("<html>B. Each String in the array lines will output, <br>with no pause in between because this method is not executed in a Thread.</html>");
 		
-		JButton btnNewButton_2 = new JButton("C. j = 8");
+		JButton btnNewButton_2 = new JButton("<html>C. Each String in the array lines will output, <br>and there is no guarantee there will be a pause because currentThread() may not retrieve this thread</html>");
 		
-		JButton btnNewButton_3 = new JButton("D. The code will run with no output");
+		JButton btnNewButton_3 = new JButton("D. This code will not compile ");
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -88,4 +87,7 @@ public class ChoiceQuestionPanel_2 extends JPanel {
 	
 
 	}
+
+	
+
 }

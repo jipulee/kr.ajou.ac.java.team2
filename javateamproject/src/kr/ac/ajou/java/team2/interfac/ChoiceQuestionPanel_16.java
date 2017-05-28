@@ -11,33 +11,32 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
-public class ChoiceQuestionPanel_1 extends JPanel {
+public class ChoiceQuestionPanel_16 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_1() {
-		
-		JLabel lblNewLabel = new JLabel("Quention 1");
+	public ChoiceQuestionPanel_16() {
+		JLabel lblNewLabel = new JLabel("Quention 16");
 		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("Which is a valid declarations of a String?");
+		JLabel lblNewLabel_1 = new JLabel("Which of the following statements is true?");
 		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
 		
-		JButton btnNewButton = new JButton("A.String s1 = null;");
+		JButton btnNewButton = new JButton("<html>A.If assertions are compiled into a source file, <br>and if no flags are included at runtime, assertions will execute by default.</html>");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnBstringS = new JButton("B.String s2 = 'null';");
+		JButton btnBstringS = new JButton("B.As of Java version 1.4, assertion statements are compiled by default.");
 		btnBstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		btnBstringS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnCstringS = new JButton("C.String s3 = (String) 'abc';");
+		JButton btnCstringS = new JButton("<html>C.With the proper use of runtime arguments, it is possible to instruct the VM to disable assertions for a certain class,<br> and to enable assertions for a certain package, at the same time.</html>");
 		btnCstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnDstringS = new JButton("D.String s4 = (String) '\ufeed';");
+		JButton btnDstringS = new JButton("D.When evaluating command-line arguments, the VM gives -ea flags precedence over -da flags");
 		btnDstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -71,5 +70,8 @@ public class ChoiceQuestionPanel_1 extends JPanel {
 		);
 		setLayout(groupLayout);
 
+
+
 	}
+
 }

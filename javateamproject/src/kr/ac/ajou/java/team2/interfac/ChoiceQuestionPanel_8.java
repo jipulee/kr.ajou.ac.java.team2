@@ -11,33 +11,32 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
-public class ChoiceQuestionPanel_1 extends JPanel {
+public class ChoiceQuestionPanel_8 extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public ChoiceQuestionPanel_1() {
-		
-		JLabel lblNewLabel = new JLabel("Quention 1");
+	public ChoiceQuestionPanel_8() {
+		JLabel lblNewLabel = new JLabel("Quention 8");
 		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("Which is a valid declarations of a String?");
+		JLabel lblNewLabel_1 = new JLabel("Which interface does java.util.Hashtable implement?");
 		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 30));
 		
-		JButton btnNewButton = new JButton("A.String s1 = null;");
+		JButton btnNewButton = new JButton("A.Java.util.Map");
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnBstringS = new JButton("B.String s2 = 'null';");
+		JButton btnBstringS = new JButton("B.Java.util.List");
 		btnBstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		btnBstringS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnCstringS = new JButton("C.String s3 = (String) 'abc';");
+		JButton btnCstringS = new JButton("C.Java.util.HashTable");
 		btnCstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		JButton btnDstringS = new JButton("D.String s4 = (String) '\ufeed';");
+		JButton btnDstringS = new JButton("D.Java.util.Collection");
 		btnDstringS.setHorizontalAlignment(SwingConstants.LEFT);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -71,5 +70,9 @@ public class ChoiceQuestionPanel_1 extends JPanel {
 		);
 		setLayout(groupLayout);
 
+
+	
+
 	}
+
 }
