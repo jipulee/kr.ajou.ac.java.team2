@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
+
+import kr.ac.ajou.java.team2.action.LoginAction;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
@@ -68,7 +71,16 @@ public class LoginFrame extends JFrame {
 		loginBtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(userName.getText().equals("admin")&&String.valueOf(password.getPassword()).equals("123")){
+				//userName.getText().equals("admin")&&String.valueOf(password.getPassword()).equals("123")
+				LoginAction la = new LoginAction();
+				boolean boo = false;
+				try {
+					boo = la.checkUser(userName.getText(), String.valueOf(password.getPassword()));
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				if(boo){
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
