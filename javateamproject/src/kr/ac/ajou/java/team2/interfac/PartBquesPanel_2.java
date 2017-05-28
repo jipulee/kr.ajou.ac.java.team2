@@ -16,11 +16,7 @@ public class PartBquesPanel_2 extends JPanel {
 	 * Create the panel.
 	 */
 	public PartBquesPanel_2() {
-		PartBquestion q_1 = new PartBquestion();
-		q_1.setQuesNum(22);
-		q_1.setQuestion("How old are you?");
-		q_1.setAnswer("25");
-		
+	
 		
 		JLabel lblNewLabel = new JLabel("Question.");
 		
