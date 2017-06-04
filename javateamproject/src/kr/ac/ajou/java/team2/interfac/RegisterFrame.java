@@ -9,6 +9,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.TitledBorder;
+
+import kr.ac.ajou.java.team2.action.RegisterAction;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -22,9 +25,9 @@ import java.awt.event.ActionEvent;
 public class RegisterFrame extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField username;
+	private JTextField password;
+	private JTextField realname;
 
 	/**
 	 * Launch the application.
@@ -57,19 +60,27 @@ public class RegisterFrame extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(null, "rigister", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
-		JButton btnNewButton = new JButton("Confirm\r\n");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							LoginFrame frame = new LoginFrame();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+		JButton Confirm = new JButton("Confirm\r\n");
+		Confirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RegisterAction ra = new RegisterAction();
+				ra.Register(username.getText(), password.getText(), realname.getText());
+				
+				 if(e.getSource() == Confirm)  
+			        {  
+					 	JOptionPane.showMessageDialog(null, "Register success!!", null,JOptionPane.WARNING_MESSAGE);  
+			            EventQueue.invokeLater(new Runnable() {
+							public void run() {
+								try {
+									LoginFrame frame = new LoginFrame();
+									frame.setVisible(true);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+						});
+			        }  
+				
 				setVisible(false);
 			}
 		});
@@ -80,8 +91,20 @@ public class RegisterFrame extends JFrame {
 				 if(e.getSource() == Exit)  
 			        {  
 			            int i = JOptionPane.showConfirmDialog(null,"sure to quit£¿", "confirm", JOptionPane.YES_NO_OPTION);  
-			            if(i == JOptionPane.YES_OPTION);  
-			            System.exit(0);  
+			            if(i == JOptionPane.YES_OPTION){
+			            	 EventQueue.invokeLater(new Runnable() {
+									public void run() {
+										try {
+											LoginFrame frame = new LoginFrame();
+											frame.setVisible(true);
+										} catch (Exception e) {
+											e.printStackTrace();
+										}
+									}
+								});
+			            	 setVisible(false);
+			            }
+			            
 			        }  
 			}
 		});
@@ -91,7 +114,7 @@ public class RegisterFrame extends JFrame {
 				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(20)
-					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+					.addComponent(Confirm, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
 					.addGap(177)
 					.addComponent(Exit, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
 					.addGap(18))
@@ -102,7 +125,7 @@ public class RegisterFrame extends JFrame {
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 192, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+						.addComponent(Confirm, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
 						.addComponent(Exit, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
 		);
 		
@@ -110,18 +133,18 @@ public class RegisterFrame extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
 		
-		textField = new JTextField();
-		textField.setColumns(10);
+		username = new JTextField();
+		username.setColumns(10);
 		
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblPassword.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		password = new JTextField();
+		password.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
+		realname = new JTextField();
+		realname.setColumns(10);
 		
 		JLabel lblName = new JLabel("Real name");
 		lblName.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -138,9 +161,9 @@ public class RegisterFrame extends JFrame {
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 240, GroupLayout.PREFERRED_SIZE))
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 240, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, 240, GroupLayout.PREFERRED_SIZE))
+							.addComponent(realname, GroupLayout.PREFERRED_SIZE, 240, GroupLayout.PREFERRED_SIZE))
+						.addComponent(password, GroupLayout.PREFERRED_SIZE, 240, GroupLayout.PREFERRED_SIZE)
+						.addComponent(username, GroupLayout.PREFERRED_SIZE, 240, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(57, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
@@ -149,14 +172,14 @@ public class RegisterFrame extends JFrame {
 					.addGap(22)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+						.addComponent(username, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblPassword, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+						.addComponent(password, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(realname, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblName, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(25, Short.MAX_VALUE))
 		);
