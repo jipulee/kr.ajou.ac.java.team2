@@ -17,7 +17,7 @@ public class PartBquesPanel_3 extends JPanel {
 		JLabel lblNewLabel = new JLabel("Question.23");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_1 = new JLabel("There are seven characters, at least one of which must be included to indicate a floating point literal.  What are they?");
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the output of this program?<br><br>1.	    class booloperators {<br>2.	        public static void main(String args[]) <br>3.	        {<br>4.	            boolean var1 = true;<br>5.		    boolean var2 = false;<br>6.		    System.out.println((var2 & var2));<br>7.	        } <br>8.	    }</html>");
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();

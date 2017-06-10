@@ -16,7 +16,7 @@ public class PartBquesPanel_7 extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("Question.27");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		JLabel lblNewLabel_1 = new JLabel("True or false?  All elements in a Java array must be of the same type.");
+		JLabel lblNewLabel_1 = new JLabel("<html>How many objects are created by the following code?<br><br>Object a, b, c, d, e;<br>e = new Object ();<br>b = a = e;<br>e = new Object ();</html>");
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();

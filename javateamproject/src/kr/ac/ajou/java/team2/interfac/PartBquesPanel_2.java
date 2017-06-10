@@ -18,7 +18,7 @@ public class PartBquesPanel_2 extends JPanel {
 		JLabel lblNewLabel = new JLabel("Question.22");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_1 = new JLabel("True or false?  By default, an integral literal is a 64 bit value.");
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the output of this program?<br>1.	    class evaluate {<br>2.	        public static void main(String args[]) <br>3.	        {<br>4.	            int a[] = {1,2,3,4,5};<br>5.		    int d[] = a;<br>6.		    int sum = 0;<br>7.		    for (int j = 0; j < 3; ++j)<br>8.	                sum += (a[j] * d[j + 1]) + (a[j + 1] * d[j]);<br>9.		  System.out.println(sum);<br>10.	        } <br>11.	    }</html>");
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();

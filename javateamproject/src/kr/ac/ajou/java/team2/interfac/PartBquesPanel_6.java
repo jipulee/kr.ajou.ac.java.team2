@@ -16,7 +16,7 @@ public class PartBquesPanel_6 extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("Question.26");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		JLabel lblNewLabel_1 = new JLabel("A Java array is an ordered collection of three kinds of things.What are they?");
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the output of this program?<br><br>1.	    class array_output {<br>2.	        public static void main(String args[]) <br>3.	        {<br>4.	       	    int array_variable [] = new int[10];<br>5.		    for (int i = 0; i < 10; ++i) {<br>6.	                array_variable[i] = i/2;<br>7.	                array_variable[i]++;<br>8.	                System.out.print(array_variable[i] + );<br>9.	                i++;<br>10.	            }<br>11.	 <br>12.	        } <br>13.	    }</html>");
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();

@@ -20,7 +20,7 @@ public class PartBquesPanel_1 extends JPanel {
 		
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_1 = new JLabel("Show six different ways to express the decimal value 28 as an integral literal.");
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the output of this program?<br>1.	    class increment {<br>2.	        public static void main(String args[]) <br>3.	        {       <br>4.	             int g = 3;<br>5.	             System.out.print(++g * 8);<br>6.	        } <br>7.	    }</html>");
 		
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		

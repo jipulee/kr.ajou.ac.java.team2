@@ -16,7 +16,7 @@ public class PartBquesPanel_9 extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("Question.29");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		JLabel lblNewLabel_1 = new JLabel("True or false?  The size of a Java array can be specified using a variable or a literal.");
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the output of the given program?<br><br>public class Test97 {<br>public static void main(String[] args) {<br>int[][] a = new int[2][2];<br>System.out.println(a.length);<br>}<br>} </html>");
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();

@@ -16,7 +16,7 @@ public class PartBquesPanel_8 extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("Question.28");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		JLabel lblNewLabel_1 = new JLabel("There are two different formats that can be used to declare a reference variable capable of containing a reference to a single-dimensional array. What are they?");
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the output of this program?<br><br>1.	 class Alligator <br>2.	 {<br>3.	  public static void main(String[] args) <br>4.	   {<br>5.	   int []x[] = {{1,2}, {3,4,5}, {6,7,8,9}};<br>6.	   int [][]y = x;<br>7.	   System.out.println(y[2][1]);<br>8.	   }<br>9.	 }</html>");
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();
