@@ -15,6 +15,45 @@ import java.awt.Font;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
+
+import kr.ac.ajou.java.team2.action.ChoiceQuestionAction;
+import kr.ac.ajou.java.team2.action.ScoreAction;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_1;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_10;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_11;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_12;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_13;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_14;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_15;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_16;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_17;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_18;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_19;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_2;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_20;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_3;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_4;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_5;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_6;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_7;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_8;
+import kr.ac.ajou.java.team2.interfac.partA.ChoiceQuestionPanel_9;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_1;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_10;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_2;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_3;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_4;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_5;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_6;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_7;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_8;
+import kr.ac.ajou.java.team2.interfac.partB.PartBquesPanel_9;
+import kr.ac.ajou.java.team2.interfac.partC.SubjectiveQuestionPanel_31;
+import kr.ac.ajou.java.team2.interfac.partC.SubjectiveQuestionPanel_32;
+import kr.ac.ajou.java.team2.interfac.partC.SubjectiveQuestionPanel_33;
+import kr.ac.ajou.java.team2.interfac.partC.SubjectiveQuestionPanel_34;
+import kr.ac.ajou.java.team2.interfac.partC.SubjectiveQuestionPanel_35;
+
 import java.awt.Color;
 import javax.swing.border.EtchedBorder;
 import javax.swing.JButton;
@@ -23,6 +62,7 @@ import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 
 public class MainFrame extends JFrame {
 
@@ -106,6 +146,14 @@ public class MainFrame extends JFrame {
 	public static final String THIRTYTHREE = "thirty-three";
 	public static final String THIRTYFOUR = "thirty-four";
 	public static final String THIRTYFIVE = "thirty-five";
+	private JButton bnt_28;
+	private JButton bnt_29;
+	private JButton bnt_30;
+	private JButton bnt_31;
+	private JButton bnt_32;
+	private JButton bnt_33;
+	private JButton bnt_34;
+	private JButton bnt_35;
 	
 
 	/**
@@ -228,39 +276,76 @@ public class MainFrame extends JFrame {
 		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		
 		JButton btnNewButton = new JButton("Last");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				CardLayout cl = (CardLayout) (cardPanel.getLayout());
 				cl.previous(cardPanel);
 			}
 		});
 		
 		JButton btnNewButton_1 = new JButton("Next");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				CardLayout cl = (CardLayout) (cardPanel.getLayout());
 				cl.next(cardPanel);
 			}
 		});
 		
 		JButton btnNewButton_3 = new JButton("Submit");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ChoiceQuestionAction cqa = new ChoiceQuestionAction();
+				ScoreAction sc = new ScoreAction();
+				boolean userAnswerTF[] = new boolean[34];
+			
+				try {
+					userAnswerTF[cqp_11.getQuestionNum()-1] = cqa.checkAnswer(cqp_11.getQuestionNum(), cqp_11.getUserAnswer());
+					userAnswerTF[cqp_12.getQuestionNum()-1] = cqa.checkAnswer(cqp_12.getQuestionNum(), cqp_12.getUserAnswer());
+					userAnswerTF[cqp_13.getQuestionNum()-1] = cqa.checkAnswer(cqp_13.getQuestionNum(), cqp_13.getUserAnswer());
+					userAnswerTF[cqp_14.getQuestionNum()-1] = cqa.checkAnswer(cqp_14.getQuestionNum(), cqp_14.getUserAnswer());
+					userAnswerTF[cqp_15.getQuestionNum()-1] = cqa.checkAnswer(cqp_15.getQuestionNum(), cqp_15.getUserAnswer());
+					userAnswerTF[cqp_16.getQuestionNum()-1] = cqa.checkAnswer(cqp_16.getQuestionNum(), cqp_16.getUserAnswer());
+					userAnswerTF[cqp_17.getQuestionNum()-1] = cqa.checkAnswer(cqp_17.getQuestionNum(), cqp_17.getUserAnswer());
+					userAnswerTF[cqp_18.getQuestionNum()-1] = cqa.checkAnswer(cqp_18.getQuestionNum(), cqp_18.getUserAnswer());
+					userAnswerTF[cqp_19.getQuestionNum()-1] = cqa.checkAnswer(cqp_19.getQuestionNum(), cqp_19.getUserAnswer());
+					userAnswerTF[cqp_20.getQuestionNum()-1] = cqa.checkAnswer(cqp_20.getQuestionNum(), cqp_20.getUserAnswer());
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				int score = sc.scoreCalculation(userAnswerTF);
+				try {
+					sc.saveScore(score);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				System.out.println("you score is :"+score);
+				
+				
+				
+			}
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 326, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 723, GroupLayout.PREFERRED_SIZE)
-						.addComponent(cardPanel, GroupLayout.PREFERRED_SIZE, 716, GroupLayout.PREFERRED_SIZE)
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 221, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
-							.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 259, GroupLayout.PREFERRED_SIZE))
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-							.addContainerGap(624, Short.MAX_VALUE)
-							.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)))
+							.addContainerGap()
+							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 723, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE))
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 326, GroupLayout.PREFERRED_SIZE)
+								.addComponent(cardPanel, GroupLayout.PREFERRED_SIZE, 716, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 221, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+									.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 259, GroupLayout.PREFERRED_SIZE)))))
 					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
@@ -274,13 +359,13 @@ public class MainFrame extends JFrame {
 						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+					.addComponent(panel, GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 28, Short.MAX_VALUE))
+					.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
 		);
 		
-		JButton btnNewButton_2 = new JButton("1");
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
+		JButton bnt_1 = new JButton("1");
+		bnt_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout cl = (CardLayout) (cardPanel.getLayout());
@@ -288,102 +373,178 @@ public class MainFrame extends JFrame {
 				
 			}
 		});
-		btnNewButton_2.addActionListener(new ActionListener() {
+		bnt_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		bnt_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button = new JButton("2");
-		button.addMouseListener(new MouseAdapter() {
+		JButton bnt_2 = new JButton("2");
+		bnt_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout cl = (CardLayout) (cardPanel.getLayout());
 				cl.show(cardPanel, TWO);
 			}
 		});
-		button.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		bnt_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_1 = new JButton("3");
-		button_1.addMouseListener(new MouseAdapter() {
+		JButton bnt_3 = new JButton("3");
+		bnt_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout cl = (CardLayout) (cardPanel.getLayout());
 				cl.show(cardPanel, THREE);
 			}
 		});
-		button_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		bnt_3.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_2 = new JButton("4");
-		button_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_4 = new JButton("4");
+		bnt_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, FOUR);
+			}
+		});
+		bnt_4.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_3 = new JButton("5");
-		button_3.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_5 = new JButton("5");
+		bnt_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, FIVE);
+			}
+		});
+		bnt_5.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_4 = new JButton("6");
-		button_4.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_6 = new JButton("6");
+		bnt_6.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_5 = new JButton("7");
-		button_5.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_7 = new JButton("7");
+		bnt_7.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_6 = new JButton("8");
-		button_6.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_8 = new JButton("8");
+		bnt_8.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_7 = new JButton("9");
-		button_7.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_9 = new JButton("9");
+		bnt_9.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_8 = new JButton("10");
-		button_8.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_10 = new JButton("10");
+		bnt_10.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_9 = new JButton("11");
-		button_9.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_11 = new JButton("11");
+		bnt_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, ELEVEN);
+			}
+		});
+		bnt_11.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_10 = new JButton("12");
-		button_10.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_12 = new JButton("12");
+		bnt_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, TWELVE);
+			}
+		});
+		bnt_12.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_11 = new JButton("13");
-		button_11.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_13 = new JButton("13");
+		bnt_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, THIRTEEN);
+			}
+		});
+		bnt_13.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_12 = new JButton("14");
-		button_12.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_14 = new JButton("14");
+		bnt_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, FOURTEEN);
+			}
+		});
+		bnt_14.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_13 = new JButton("15");
-		button_13.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_15 = new JButton("15");
+		bnt_15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, FIFTEEN);
+			}
+		});
+		bnt_15.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_14 = new JButton("16");
-		button_14.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_16 = new JButton("16");
+		bnt_16.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, SIXTEEN);
+			}
+		});
+		bnt_16.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_15 = new JButton("17");
-		button_15.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_17 = new JButton("17");
+		bnt_17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, SEVENTEEN);
+			}
+		});
+		bnt_17.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_16 = new JButton("18");
-		button_16.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_18 = new JButton("18");
+		bnt_18.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, EIGHTEEN);
+			}
+		});
+		bnt_18.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_17 = new JButton("19");
-		button_17.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_19 = new JButton("19");
+		bnt_19.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, NINETEEN);
+			}
+		});
+		bnt_19.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_18 = new JButton("20");
-		button_18.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		JButton bnt_20 = new JButton("20");
+		bnt_20.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cardPanel.getLayout());
+				cl.show(cardPanel, TWENTY);
+			}
+		});
+		bnt_20.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_19 = new JButton("21");
-		button_19.addMouseListener(new MouseAdapter() {
+		JButton bnt_21 = new JButton("21");
+		bnt_21.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CardLayout cl = (CardLayout) (cardPanel.getLayout());
 				cl.show(cardPanel, TWENTYONE);
 			}
 		});
-		button_19.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		bnt_21.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
-		JButton button_20 = new JButton("22");
-		button_20.addMouseListener(new MouseAdapter() {
+		JButton bnt_22 = new JButton("22");
+		bnt_22.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		bnt_22.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			CardLayout cl = (CardLayout) (cardPanel.getLayout());
 			cl.show(cardPanel, TWENTYTWO);
 		}
 	});
-		button_20.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		bnt_22.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
 		JButton button_21 = new JButton("23");
 		button_21.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
@@ -409,89 +570,183 @@ public class MainFrame extends JFrame {
 		JButton button_28 = new JButton("30");
 		button_28.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
 		
+		JButton bnt_24 = new JButton("24");
+		bnt_24.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton bnt_25 = new JButton("25");
+		bnt_25.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton bnt_27 = new JButton("27");
+		bnt_27.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton bnt_26 = new JButton("26");
+		bnt_26.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		JButton bnt_23 = new JButton("23");
+		bnt_23.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		bnt_23.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		bnt_28 = new JButton("28");
+		bnt_28.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		bnt_29 = new JButton("29");
+		bnt_29.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		bnt_30 = new JButton("30");
+		bnt_30.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		bnt_31 = new JButton("31");
+		bnt_31.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		bnt_32 = new JButton("32");
+		bnt_32.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		bnt_33 = new JButton("33");
+		bnt_33.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		bnt_34 = new JButton("34");
+		bnt_34.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
+		bnt_35 = new JButton("35");
+		bnt_35.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 8));
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(11)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(button_10, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addGap(11)
+							.addComponent(bnt_1, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_11, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_2, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_12, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_3, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_13, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_4, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_14, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_5, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_15, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_6, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_16, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_7, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_17, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_8, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_18, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_9, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_19, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_10, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_20, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
+							.addComponent(bnt_11, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(bnt_12, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(bnt_13, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+							.addGap(3))
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_3, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_4, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_5, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_6, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_7, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_8, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(button_9, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(60, Short.MAX_VALUE))
+							.addContainerGap()
+							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel.createSequentialGroup()
+									.addComponent(bnt_14, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(bnt_15, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_16, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_17, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_18, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_19, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_20, GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_21, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addGap(4))
+								.addGroup(gl_panel.createSequentialGroup()
+									.addComponent(bnt_27, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(bnt_28, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(bnt_29, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_30, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_31, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_32, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_33, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_34, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)))
+							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel.createSequentialGroup()
+									.addGap(0)
+									.addComponent(bnt_22, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_23, GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_24, GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_25, GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(bnt_26, GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+								.addGroup(gl_panel.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(bnt_35, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)))))
+					.addGap(5))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGap(8)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addComponent(button_9, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_8, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_7, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_6, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_5, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_4, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_3, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnNewButton_2))
+						.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+							.addComponent(bnt_11, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_12, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_13, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+						.addComponent(bnt_10, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_9, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_8, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_7, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_6, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_5, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_4, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_3, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_2, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_1))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addComponent(button_10, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_11, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_12, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_13, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_14, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_15, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_16, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_17, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_18, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_19, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button_20, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
-					
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(bnt_14, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_15, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_16, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_17, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_18, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_19, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+							.addComponent(bnt_20, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_21, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_22, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_23, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_24, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_25, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+							.addComponent(bnt_26, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(bnt_27, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_30, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_31, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_32, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_28, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_29, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_33, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_34, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(bnt_35, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(11, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);

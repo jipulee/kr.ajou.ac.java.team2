@@ -73,6 +73,7 @@ public class LoginFrame extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				//userName.getText().equals("admin")&&String.valueOf(password.getPassword()).equals("123")
 				LoginAction la = new LoginAction();
+				
 				boolean boo = false;
 				try {
 					boo = la.checkUser(userName.getText(), String.valueOf(password.getPassword()));

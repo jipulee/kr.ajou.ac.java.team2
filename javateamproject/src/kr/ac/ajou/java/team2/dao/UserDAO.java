@@ -42,6 +42,7 @@ public class UserDAO {
 		ptmt.setString(1, user.getName());
 		ptmt.setString(2, user.getPassword());
 		ptmt.setString(3, user.getRealname());
+		ptmt.setInt(4, user.getId());
 		ptmt.execute();
 		
 		
@@ -77,19 +78,20 @@ public class UserDAO {
 		}
 		
 		
-		return null;
+		return user;
 	}
 	
 	public List<User> queryUser() throws Exception{
 		Connection conn = DBConnection.getConnection();
 		Statement stmt = conn.createStatement();
-		ResultSet rs= stmt.executeQuery("select name,password from user");
+		ResultSet rs= stmt.executeQuery("select id,name,password from user");
 		
 		List<User> users = new ArrayList<User>();
 		User user = null;
 		
 		while(rs.next()){
 			user = new User();
+			user.setId(rs.getInt("id"));
 			user.setName(rs.getString("name"));
 			user.setPassword(rs.getString("password"));	
 			
