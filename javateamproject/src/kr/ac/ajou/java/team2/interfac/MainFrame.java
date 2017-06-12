@@ -299,6 +299,16 @@ public class MainFrame extends JFrame {
 				boolean userAnswerTF[] = new boolean[34];
 			
 				try {
+					userAnswerTF[cqp_1.getQuestionNum()-1] = cqa.checkAnswer(cqp_1.getQuestionNum(), cqp_1.getUserAnswer());
+					userAnswerTF[cqp_2.getQuestionNum()-1] = cqa.checkAnswer(cqp_2.getQuestionNum(), cqp_2.getUserAnswer());
+					userAnswerTF[cqp_3.getQuestionNum()-1] = cqa.checkAnswer(cqp_3.getQuestionNum(), cqp_3.getUserAnswer());
+					userAnswerTF[cqp_4.getQuestionNum()-1] = cqa.checkAnswer(cqp_4.getQuestionNum(), cqp_4.getUserAnswer());
+					userAnswerTF[cqp_5.getQuestionNum()-1] = cqa.checkAnswer(cqp_5.getQuestionNum(), cqp_5.getUserAnswer());
+					userAnswerTF[cqp_6.getQuestionNum()-1] = cqa.checkAnswer(cqp_6.getQuestionNum(), cqp_6.getUserAnswer());
+					userAnswerTF[cqp_7.getQuestionNum()-1] = cqa.checkAnswer(cqp_7.getQuestionNum(), cqp_7.getUserAnswer());
+					userAnswerTF[cqp_8.getQuestionNum()-1] = cqa.checkAnswer(cqp_8.getQuestionNum(), cqp_8.getUserAnswer());
+					userAnswerTF[cqp_9.getQuestionNum()-1] = cqa.checkAnswer(cqp_9.getQuestionNum(), cqp_9.getUserAnswer());
+					userAnswerTF[cqp_10.getQuestionNum()-1] = cqa.checkAnswer(cqp_10.getQuestionNum(), cqp_10.getUserAnswer());
 					userAnswerTF[cqp_11.getQuestionNum()-1] = cqa.checkAnswer(cqp_11.getQuestionNum(), cqp_11.getUserAnswer());
 					userAnswerTF[cqp_12.getQuestionNum()-1] = cqa.checkAnswer(cqp_12.getQuestionNum(), cqp_12.getUserAnswer());
 					userAnswerTF[cqp_13.getQuestionNum()-1] = cqa.checkAnswer(cqp_13.getQuestionNum(), cqp_13.getUserAnswer());
