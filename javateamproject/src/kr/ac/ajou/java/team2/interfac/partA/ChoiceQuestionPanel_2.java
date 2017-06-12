@@ -1,10 +1,12 @@
 package kr.ac.ajou.java.team2.interfac.partA;
 
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JLabel;
 import java.awt.*;
 
 import javax.swing.ImageIcon;
+import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
@@ -16,76 +18,98 @@ import java.awt.event.ActionEvent;
 
 public class ChoiceQuestionPanel_2 extends JPanel {
 
-	/**
-	 * Create the panel.
-	 */
-	public ChoiceQuestionPanel_2() {
-		
-		JLabel lblNewLabel_1 = new JLabel("Question 2");
-		
-		JLabel lblNewLabel_2 = new JLabel("What will be the output of the program?");
-		Image img = new ImageIcon("q2.jpg").getImage();
-		JTextArea textArea = new JTextArea(){
-			{setOpaque(false);}
-			public void paintComponent(Graphics g){
-				g.drawImage(img, 0,0,this);
-				super.paintComponent(g);
-			}
-			
-		};
-		
-		JButton btnNewButton = new JButton("A. j = 0");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		
-		JButton btnNewButton_1 = new JButton("B. j = 4");
-		
-		JButton btnNewButton_2 = new JButton("C. j = 8");
-		
-		JButton btnNewButton_3 = new JButton("D. The code will run with no output");
-
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-							.addGap(43)
-							.addComponent(lblNewLabel_2))
-						.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 491, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnNewButton)
-						.addComponent(btnNewButton_1)
-						.addComponent(btnNewButton_2)
-						.addComponent(btnNewButton_3))
-					.addContainerGap(124, Short.MAX_VALUE))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(24)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_2))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(btnNewButton)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_1)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_2)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_3)
-					.addContainerGap(17, Short.MAX_VALUE))
-		);
-		setLayout(groupLayout);
-		
-
 	
 
+		private final ButtonGroup buttonGroup = new ButtonGroup();
+		private final int questionNum = 11;
+		JRadioButton A,B,C,D;
+		
+		public int getQuestionNum() {
+			return questionNum;
+		}
+
+		public String getUserAnswer(){
+			
+			if(A.isSelected())
+				return A.getText();
+				
+			else if(B.isSelected())
+				return B.getText();
+			
+			else if(C.isSelected())
+				return C.getText();
+			
+			else
+				return D.getText();
+		}
+
+
+
+		/**
+		 * Create the panel.
+		 */
+
+		public ChoiceQuestionPanel_2() {
+			JLabel lblNewLabel_1 = new JLabel("Question 2");
+			
+			JLabel lblNewLabel_2 = new JLabel("Which of these values can a boolean variable contain?");
+			lblNewLabel_2.setFont(new Font("宋体", Font.PLAIN, 18));
+
+			
+			A = new JRadioButton("True & False");
+			buttonGroup.add(A);
+			A.setFont(new Font("宋体", Font.PLAIN, 16));
+			
+			B = new JRadioButton("0 & 1");
+			buttonGroup.add(B);
+			B.setFont(new Font("宋体", Font.PLAIN, 16));
+			
+			C = new JRadioButton("Any integer value");
+			buttonGroup.add(C);
+			C.setFont(new Font("宋体", Font.PLAIN, 16));
+			
+			D = new JRadioButton("true");
+			buttonGroup.add(D);
+			D.setFont(new Font("宋体", Font.PLAIN, 16));
+
+			GroupLayout groupLayout = new GroupLayout(this);
+			groupLayout.setHorizontalGroup(
+				groupLayout.createParallelGroup(Alignment.LEADING)
+					.addGroup(groupLayout.createSequentialGroup()
+						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+							.addGroup(groupLayout.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addGap(20)
+								.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 565, GroupLayout.PREFERRED_SIZE))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addGap(61)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+									.addComponent(B)
+									.addComponent(A)
+									.addComponent(C)
+									.addComponent(D))))
+						.addContainerGap(40, Short.MAX_VALUE))
+			);
+			groupLayout.setVerticalGroup(
+				groupLayout.createParallelGroup(Alignment.LEADING)
+					.addGroup(groupLayout.createSequentialGroup()
+						.addGap(24)
+						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+						.addGap(28)
+						.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+						.addGap(72)
+						.addComponent(A)
+						.addGap(31)
+						.addComponent(B)
+						.addGap(33)
+						.addComponent(C)
+						.addGap(30)
+						.addComponent(D)
+						.addContainerGap(50, Short.MAX_VALUE))
+			);
+			setLayout(groupLayout);
+
+		}
 	}
-}

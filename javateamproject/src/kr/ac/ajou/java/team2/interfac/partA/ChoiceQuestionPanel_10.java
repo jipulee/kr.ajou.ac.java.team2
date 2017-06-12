@@ -13,79 +13,103 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class ChoiceQuestionPanel_10 extends JPanel {
+
+
+
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final int questionNum = 11;
+	JRadioButton A,B,C,D;
+	
+	public int getQuestionNum() {
+		return questionNum;
+	}
+
+	public String getUserAnswer(){
+		
+		if(A.isSelected())
+			return A.getText();
+			
+		else if(B.isSelected())
+			return B.getText();
+		
+		else if(C.isSelected())
+			return C.getText();
+		
+		else
+			return D.getText();
+	}
+
+
 
 	/**
 	 * Create the panel.
 	 */
+
 	public ChoiceQuestionPanel_10() {
 		JLabel lblNewLabel_1 = new JLabel("Question 10");
 		
-		JLabel lblNewLabel_2 = new JLabel("What will be the output of the program?");
-		Image img = new ImageIcon("q10.jpg").getImage();
-		JTextArea textArea = new JTextArea(){
-			{setOpaque(false);}
-			public void paintComponent(Graphics g){
-				g.drawImage(img, 0,0,this);
-				super.paintComponent(g);
-			}
-			
-		};
+		JLabel lblNewLabel_2 = new JLabel("Which of these coding types is used for data type characters in Java?");
+		lblNewLabel_2.setFont(new Font("宋体", Font.PLAIN, 18));
+
 		
-		JButton btnNewButton = new JButton("A. 0 1 2");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		A = new JRadioButton("ASCII");
+		buttonGroup.add(A);
+		A.setFont(new Font("宋体", Font.PLAIN, 16));
 		
-		JButton btnNewButton_1 = new JButton("B. 0 1 2 1 2 2");
+		B = new JRadioButton("ISO-LATIN-1");
+		buttonGroup.add(B);
+		B.setFont(new Font("宋体", Font.PLAIN, 16));
 		
-		JButton btnNewButton_2 = new JButton("C. Compilation fails at line 11.");
+		C = new JRadioButton("UNICODE");
+		buttonGroup.add(C);
+		C.setFont(new Font("宋体", Font.PLAIN, 16));
 		
-		JButton btnNewButton_3 = new JButton("D. Compilation fails at line 12.");
+		D = new JRadioButton("None of the mentioned");
+		buttonGroup.add(D);
+		D.setFont(new Font("宋体", Font.PLAIN, 16));
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-							.addGap(43)
-							.addComponent(lblNewLabel_2))
-						.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 491, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnNewButton)
-						.addComponent(btnNewButton_1)
-						.addComponent(btnNewButton_2)
-						.addComponent(btnNewButton_3))
-					.addContainerGap(124, Short.MAX_VALUE))
+							.addContainerGap()
+							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(20)
+							.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 565, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(61)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(B)
+								.addComponent(A)
+								.addComponent(C)
+								.addComponent(D))))
+					.addContainerGap(40, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(24)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_2))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(btnNewButton)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_1)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_2)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_3)
-					.addContainerGap(17, Short.MAX_VALUE))
+					.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+					.addGap(28)
+					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+					.addGap(72)
+					.addComponent(A)
+					.addGap(31)
+					.addComponent(B)
+					.addGap(33)
+					.addComponent(C)
+					.addGap(30)
+					.addComponent(D)
+					.addContainerGap(50, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
-		
-
-	
 
 	}
-
 }

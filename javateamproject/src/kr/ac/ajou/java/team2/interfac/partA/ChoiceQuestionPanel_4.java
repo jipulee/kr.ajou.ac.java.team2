@@ -13,81 +13,103 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class ChoiceQuestionPanel_4 extends JPanel {
+
+
+
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final int questionNum = 11;
+	JRadioButton A,B,C,D;
+	
+	public int getQuestionNum() {
+		return questionNum;
+	}
+
+	public String getUserAnswer(){
+		
+		if(A.isSelected())
+			return A.getText();
+			
+		else if(B.isSelected())
+			return B.getText();
+		
+		else if(C.isSelected())
+			return C.getText();
+		
+		else
+			return D.getText();
+	}
+
+
 
 	/**
 	 * Create the panel.
 	 */
+
 	public ChoiceQuestionPanel_4() {
 		JLabel lblNewLabel_1 = new JLabel("Question 4");
 		
-		JLabel lblNewLabel_2 = new JLabel("<html>the static method Thread.currentThread() returns <br>a reference to the currently executing Thread object. <br>What is the result of this code?</html>");
-		Image img = new ImageIcon("q4.jpg").getImage();
-		JTextArea textArea = new JTextArea(){
-			{setOpaque(false);}
-			public void paintComponent(Graphics g){
-				g.drawImage(img, 0,0,this);
-				super.paintComponent(g);
-			}
-			
-		};
+		JLabel lblNewLabel_2 = new JLabel("Which of these occupy first 0 to 127 in Unicode character set used for characters in Java?");
+		lblNewLabel_2.setFont(new Font("宋体", Font.PLAIN, 18));
+
 		
-		JButton btnNewButton = new JButton("A. Each String in the array lines will output, with a 1-second pause.");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		A = new JRadioButton("ASCII");
+		buttonGroup.add(A);
+		A.setFont(new Font("宋体", Font.PLAIN, 16));
 		
-		JButton btnNewButton_1 = new JButton("<html>B. Each String in the array lines will output, <br>with no pause in between because this method is not executed in a Thread.</html>");
+		B = new JRadioButton("ISO-LATIN-1");
+		buttonGroup.add(B);
+		B.setFont(new Font("宋体", Font.PLAIN, 16));
 		
-		JButton btnNewButton_2 = new JButton("<html>C. Each String in the array lines will output, <br>and there is no guarantee there will be a pause because currentThread() may not retrieve this thread</html>");
+		C = new JRadioButton("None of the mentioned");
+		buttonGroup.add(C);
+		C.setFont(new Font("宋体", Font.PLAIN, 16));
 		
-		JButton btnNewButton_3 = new JButton("D. This code will not compile ");
+		D = new JRadioButton("ASCII and ISO-LATIN1");
+		buttonGroup.add(D);
+		D.setFont(new Font("宋体", Font.PLAIN, 16));
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-							.addGap(43)
-							.addComponent(lblNewLabel_2))
-						.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 491, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnNewButton)
-						.addComponent(btnNewButton_1)
-						.addComponent(btnNewButton_2)
-						.addComponent(btnNewButton_3))
-					.addContainerGap(124, Short.MAX_VALUE))
+							.addContainerGap()
+							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(20)
+							.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 565, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(61)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(B)
+								.addComponent(A)
+								.addComponent(C)
+								.addComponent(D))))
+					.addContainerGap(40, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(24)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_2))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(btnNewButton)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_1)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_2)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_3)
-					.addContainerGap(17, Short.MAX_VALUE))
+					.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+					.addGap(28)
+					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+					.addGap(72)
+					.addComponent(A)
+					.addGap(31)
+					.addComponent(B)
+					.addGap(33)
+					.addComponent(C)
+					.addGap(30)
+					.addComponent(D)
+					.addContainerGap(50, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
-		
-
-	
 
 	}
-
-	
-
 }
