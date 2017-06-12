@@ -1,4 +1,4 @@
-package kr.ac.ajou.java.team2.interfac.partB;
+package kr.ac.ajou.java.team2.interfac;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -17,7 +17,7 @@ public class PartBquesPanel_4 extends JPanel {
 		JLabel lblNewLabel = new JLabel("Question.24");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		
-		JLabel lblNewLabel_1 = new JLabel("True or false?  The default for a floating-point literal without an F or a D is a 32-bit float");
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the output of this program?<br><br>1.	    class asciicodes {<br>2.	        public static void main(String args[]) <br>3.	        {<br>4.	            char var1 = 'A';<br>5.		    char var2 = 'a';<br>6.		    System.out.println((int)var1 +  + (int)var2);<br>7.	        } <br>8.	    }<br></html>");
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();

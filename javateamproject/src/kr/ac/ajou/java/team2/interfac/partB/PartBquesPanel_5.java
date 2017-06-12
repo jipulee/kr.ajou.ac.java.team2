@@ -1,4 +1,4 @@
-package kr.ac.ajou.java.team2.interfac.partB;
+package kr.ac.ajou.java.team2.interfac;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -16,7 +16,7 @@ public class PartBquesPanel_5 extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("Question.25");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		JLabel lblNewLabel_1 = new JLabel("Show how to represent a String literal.");
+		JLabel lblNewLabel_1 = new JLabel("<html>What is the output of this program?<br><br>1.	    class array_output {<br>2.	        public static void main(String args[]) <br>3.	        {    <br>4.	            char array_variable [] = new char[10];<br>5.		    for (int i = 0; i < 10; ++i) {<br>6.	                array_variable[i] = 'i';<br>7.	                System.out.print(array_variable[i] +  );<br>8.	                i++;<br>9.	            }<br>10.	        } <br>11.	    }</html>");
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 15));
 		
 		textField = new JTextField();
