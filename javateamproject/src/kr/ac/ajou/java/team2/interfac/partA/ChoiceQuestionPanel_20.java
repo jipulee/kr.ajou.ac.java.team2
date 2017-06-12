@@ -43,7 +43,7 @@ public class ChoiceQuestionPanel_20 extends JPanel {
 	 */
 	public ChoiceQuestionPanel_20() {
 		JLabel lblNewLabel = new JLabel("Quention 20");
-		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
+
 		
 		JTextArea txtrWhatIsThe = new JTextArea();
 		txtrWhatIsThe.setText("Which of these is the method which is executed first before execution\r\n of any other thing takes place in a program?\r\n");

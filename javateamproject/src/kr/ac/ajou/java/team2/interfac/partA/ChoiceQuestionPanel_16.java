@@ -43,7 +43,7 @@ public class ChoiceQuestionPanel_16 extends JPanel {
 	 */
 	public ChoiceQuestionPanel_16() {
 		JLabel lblNewLabel = new JLabel("Quention 16");
-		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
+
 		
 		JTextArea txtrwhatIsThe = new JTextArea();
 		txtrwhatIsThe.setText("\"What is the output of this program?\r\n\r\n1.\t    class variable_scope {\r\n2.\t        public static void main(String args[]) \r\n3.\t        {\r\n4.\t            int x;\r\n5.\t            x = 5;\r\n6.\t            {\r\n7.\t\t        int y = 6;\r\n8.\t\t        System.out.print(x + \"\" \"\" + y);\r\n9.\t            }\r\n10.\t            System.out.println(x + \"\" \"\" + y);\r\n11.\t        } \r\n12.\t    }\r\n\"\r\n");

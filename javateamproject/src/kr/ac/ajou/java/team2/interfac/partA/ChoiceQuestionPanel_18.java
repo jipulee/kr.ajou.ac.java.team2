@@ -43,7 +43,7 @@ public class ChoiceQuestionPanel_18 extends JPanel {
 	 */
 	public ChoiceQuestionPanel_18() {
 		JLabel lblNewLabel = new JLabel("Quention 18");
-		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
+
 		
 		JTextArea txtrwhatIsThe = new JTextArea();
 		txtrwhatIsThe.setText("\"What is the output of this program?\r\n\r\n1.\t    class area {\r\n2.\t        public static void main(String args[]) \r\n3.\t        {    \r\n4.\t             double r, pi, a;\r\n5.\t             r = 9.8;\r\n6.\t             pi = 3.14;\r\n7.\t             a = pi * r * r;\r\n8.\t             System.out.println(a);\r\n9.\t        } \r\n10.\t    }\r\n\"\r\n");

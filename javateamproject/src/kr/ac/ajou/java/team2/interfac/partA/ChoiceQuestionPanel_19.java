@@ -43,7 +43,7 @@ public class ChoiceQuestionPanel_19 extends JPanel {
 	 */
 	public ChoiceQuestionPanel_19() {
 		JLabel lblNewLabel = new JLabel("Quention 19");
-		lblNewLabel.setFont(new Font("SimSun", Font.PLAIN, 24));
+
 		
 		JTextArea txtrWhatIsThe = new JTextArea();
 		txtrWhatIsThe.setText("What is the numerical range of a char data type in Java?\r\n");
