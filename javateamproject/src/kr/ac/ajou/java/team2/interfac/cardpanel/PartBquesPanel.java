@@ -23,7 +23,6 @@ public class PartBquesPanel extends JPanel {
 	JLabel lblNewLabel;
 	
 	int questionNum = 1;
-	private JButton previous;
 	private JButton next;
 	
 	boolean partBUserAnswers[] = new boolean[10];
@@ -66,17 +65,6 @@ public class PartBquesPanel extends JPanel {
 		txtrHelloHello = new JTextArea();
 		txtrHelloHello.setText("asdasasdasdasdasdadasd");
 		
-		previous = new JButton("Previous");
-		previous.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String userAnswer =textField.getText();
-				partBUserAnswers[questionNum-1] = pbqa.checkAnswer(questionNum, userAnswer);
-				System.out.println(partBUserAnswers[questionNum-1]+" "+textField.getText());
-				setPreviousQuestion();
-				txtrHelloHello.setText("");
-			}
-		});
-		
 		next = new JButton("Next");
 		next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -101,10 +89,8 @@ public class PartBquesPanel extends JPanel {
 								.addComponent(txtrHelloHello, GroupLayout.PREFERRED_SIZE, 566, GroupLayout.PREFERRED_SIZE)
 								.addComponent(textField, GroupLayout.PREFERRED_SIZE, 431, GroupLayout.PREFERRED_SIZE))))
 					.addContainerGap(66, Short.MAX_VALUE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(previous)
-					.addPreferredGap(ComponentPlacement.RELATED, 351, Short.MAX_VALUE)
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addContainerGap(501, Short.MAX_VALUE)
 					.addComponent(next, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
 					.addGap(42))
 		);
@@ -118,9 +104,7 @@ public class PartBquesPanel extends JPanel {
 					.addGap(64)
 					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(previous)
-						.addComponent(next))
+					.addComponent(next)
 					.addGap(35))
 		);
 		setLayout(groupLayout);

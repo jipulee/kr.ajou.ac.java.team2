@@ -25,7 +25,6 @@ public class ChoiceQuestionPanel extends JPanel {
 	JRadioButton A,B,C,D;
 	JLabel lblNewLabel_2,lblNewLabel_1;
 	private int questionNum = 1;
-	private JButton previous;
 	private JButton next;
 	boolean partAUserAnswers[] = new boolean[20];
 	
@@ -111,17 +110,6 @@ public class ChoiceQuestionPanel extends JPanel {
 		buttonGroup.add(D);
 		D.setFont(new Font("ËÎÌו", Font.PLAIN, 16));
 		
-		previous = new JButton("Previous");
-		previous.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				partAUserAnswers[questionNum-1]=cqa.checkAnswer(questionNum, getUserAnswer());
-				System.out.println(partAUserAnswers[questionNum-1]+getUserAnswer());
-				setPreviousQuestion();
-				buttonGroup.clearSelection();
-				
-			}
-		});
-		
 		next = new JButton("Next");
 		next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -144,13 +132,11 @@ public class ChoiceQuestionPanel extends JPanel {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(50, Short.MAX_VALUE))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(58)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(previous)
-							.addPreferredGap(ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
 							.addComponent(next, GroupLayout.PREFERRED_SIZE, 118, GroupLayout.PREFERRED_SIZE)
 							.addGap(65))
 						.addGroup(groupLayout.createSequentialGroup()
@@ -159,7 +145,7 @@ public class ChoiceQuestionPanel extends JPanel {
 								.addComponent(A)
 								.addComponent(C)
 								.addComponent(D))
-							.addContainerGap(82, Short.MAX_VALUE))))
+							.addContainerGap(470, Short.MAX_VALUE))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -177,9 +163,7 @@ public class ChoiceQuestionPanel extends JPanel {
 					.addGap(30)
 					.addComponent(D)
 					.addPreferredGap(ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(previous)
-						.addComponent(next))
+					.addComponent(next)
 					.addContainerGap())
 		);
 		setLayout(groupLayout);

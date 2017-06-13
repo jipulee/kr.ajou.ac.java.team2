@@ -7,14 +7,24 @@ public class User {
 	private String password;
 	private String realname;
 	private String answer;
-	private int score;
+	private int scoreA;
+	private int scoreB;
+	
 
-	public int getScore() {
-		return score;
+	public int getScoreA() {
+		return scoreA;
 	}
 
-	public void setScore(int score) {
-		this.score = score;
+	public void setScoreA(int scoreA) {
+		this.scoreA = scoreA;
+	}
+	
+	public int getScoreB() {
+		return scoreB;
+	}
+
+	public void setScoreB(int scoreB) {
+		this.scoreB = scoreB;
 	}
 
 	public int getId() {

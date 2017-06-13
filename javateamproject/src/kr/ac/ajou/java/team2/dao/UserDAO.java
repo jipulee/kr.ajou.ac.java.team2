@@ -64,17 +64,21 @@ public class UserDAO {
 		Connection conn = DBConnection.getConnection();
 		User user = null;
 		String sql =""+
-					"selete * from user"+
-					"where id = ?";
+					" select * from user "+
+					" where id = ? ";
 		PreparedStatement ptmt = conn.prepareStatement(sql);
 		
 		ptmt.setInt(1, id);
 		ResultSet rs = ptmt.executeQuery();
 		while(rs.next()){
 			user = new User();
+			
 			user.setName(rs.getString("name"));
 			user.setPassword(rs.getString("password"));
 			user.setRealname(rs.getString("realname"));
+			user.setScoreA(rs.getInt("scoreA"));
+			user.setScoreB(rs.getInt("scoreB"));
+			
 		}
 		
 		

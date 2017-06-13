@@ -109,6 +109,18 @@ public class MainFrame extends JFrame {
 				
 				System.out.println(score);
 				System.out.println(score2);
+				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							PrintResultFrame frame = new PrintResultFrame();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
 			}
 			
 		});
@@ -172,6 +184,7 @@ public class MainFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cl = (CardLayout)(cardPanel.getLayout());
 				cl.show(cardPanel, TWO);
+				partA.setEnabled(false);
 			}
 		});
 		
@@ -180,6 +193,7 @@ public class MainFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cl = (CardLayout)(cardPanel.getLayout());
 				cl.show(cardPanel, THREE);
+				partB.setEnabled(false);
 			}
 		});
 		

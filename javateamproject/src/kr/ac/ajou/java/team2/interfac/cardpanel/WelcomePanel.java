@@ -33,6 +33,5 @@ public class WelcomePanel extends JPanel {
 					.addContainerGap(96, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
-
 	}
 }
