@@ -66,13 +66,7 @@ public class LoginFrame extends JFrame {
 		JButton loginBtn = new JButton("Login in ");
 		loginBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		loginBtn.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				//userName.getText().equals("admin")&&String.valueOf(password.getPassword()).equals("123")
-				LoginAction la = new LoginAction();
+LoginAction la = new LoginAction();
 				
 				boolean boo = false;
 				try {

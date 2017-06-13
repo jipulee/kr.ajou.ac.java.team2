@@ -64,8 +64,8 @@ public class RegisterFrame extends JFrame {
 		Confirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RegisterAction ra = new RegisterAction();
+				if(ra.checkUserName(username.getText(),password.getText(),realname.getText())==3){
 				ra.Register(username.getText(), password.getText(), realname.getText());
-				
 				 if(e.getSource() == Confirm)  
 			        {  
 					 	JOptionPane.showMessageDialog(null, "Register success!!", null,JOptionPane.WARNING_MESSAGE);  
@@ -82,30 +82,32 @@ public class RegisterFrame extends JFrame {
 			        }  
 				
 				setVisible(false);
+				}else if(ra.checkUserName(username.getText(),password.getText(),realname.getText())==2){
+					JOptionPane.showMessageDialog(null, "Username exist", null,JOptionPane.WARNING_MESSAGE);
+					username.setText("");
+					password.setText("");
+					realname.setText("");
+				}else if(ra.checkUserName(username.getText(),password.getText(),realname.getText())==1){
+					JOptionPane.showMessageDialog(null, "Username,password and realname can not be empty!!", null,JOptionPane.WARNING_MESSAGE);
+				}
+				
 			}
 		});
 		
-		JButton Exit = new JButton("Exit");
-		Exit.addActionListener(new ActionListener() {
+		JButton back = new JButton("Back");
+		back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 if(e.getSource() == Exit)  
-			        {  
-			            int i = JOptionPane.showConfirmDialog(null,"sure to quit£¿", "confirm", JOptionPane.YES_NO_OPTION);  
-			            if(i == JOptionPane.YES_OPTION){
-			            	 EventQueue.invokeLater(new Runnable() {
-									public void run() {
-										try {
-											LoginFrame frame = new LoginFrame();
-											frame.setVisible(true);
-										} catch (Exception e) {
-											e.printStackTrace();
-										}
-									}
-								});
-			            	 setVisible(false);
-			            }
-			            
-			        }  
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							LoginFrame frame = new LoginFrame();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
 			}
 		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -116,7 +118,7 @@ public class RegisterFrame extends JFrame {
 					.addGap(20)
 					.addComponent(Confirm, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
 					.addGap(177)
-					.addComponent(Exit, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+					.addComponent(back, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
 					.addGap(18))
 		);
 		gl_contentPane.setVerticalGroup(
@@ -126,7 +128,7 @@ public class RegisterFrame extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addComponent(Confirm, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-						.addComponent(Exit, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
+						.addComponent(back, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
 		);
 		
 		JLabel lblNewLabel = new JLabel("Username:");
