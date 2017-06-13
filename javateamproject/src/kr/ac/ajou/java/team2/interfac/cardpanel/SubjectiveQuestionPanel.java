@@ -1,41 +1,38 @@
-package kr.ac.ajou.java.team2.interfac.partC;
+package kr.ac.ajou.java.team2.interfac.cardpanel;
 
 import javax.swing.JPanel;
-import javax.swing.JLabel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.JTextArea;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 
-public class SubjectiveQuestionPanel_32 extends JPanel {
+public class SubjectiveQuestionPanel extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public SubjectiveQuestionPanel_32() {
+	public SubjectiveQuestionPanel() {
 		
-		JLabel lblNewLabel = new JLabel("Question 32");
+		JLabel lblNewLabel = new JLabel("Question 31");
 		lblNewLabel.setBounds(18, 20, 127, 29);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("What is an Object?");
-		lblNewLabel_1.setBounds(18, 55, 250, 37);
+		JLabel lblNewLabel_1 = new JLabel("What is JVM?");
+		lblNewLabel_1.setBounds(18, 55, 176, 37);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(18, 98, 422, 180);
-		add(scrollPane);
 		
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
+		setLayout(null);
 		add(lblNewLabel);
 		add(lblNewLabel_1);
-		
-		
+		add(scrollPane);
 
 	}
-
 }

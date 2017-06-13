@@ -9,20 +9,34 @@ public class ScoreAction{
 	ScoreDAO scoreDAO = new ScoreDAO();
 	LoginAction la = new LoginAction();
 
-	public int scoreCalculation(boolean boo[]){
+	public int scoreCalculation(int part,boolean boo[]){
 		int score = 0;
-		for(int i = 0;i<boo.length;i++){
-			if(boo[i]==true){
-				score +=5;
+		if(part==1){
+			for(int i = 0;i<boo.length;i++){
+				if(boo[i]==true){
+					score +=3;
+				}
+			}
+		}else{
+			for(int i = 0;i<boo.length;i++){
+				if(boo[i]==true){
+					score +=4;
+				}
 			}
 		}
 		
 		return score;
 	}
 	
-	public void saveScore(int score) throws SQLException{
+	public void saveScoreA(int score) throws SQLException{
 		
 		scoreDAO.updateUser(score ,la.getId());
+		
+	}
+	
+	public void saveScoreB(int score) throws SQLException{
+		
+		scoreDAO.updateUserB(score ,la.getId());
 		
 	}
 }

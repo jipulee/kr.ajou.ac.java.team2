@@ -13,7 +13,23 @@ public class ScoreDAO {
 		Connection conn = DBConnection.getConnection();
 		String sql =""+
 					" update  user "+
-					" set score=? "+
+					" set scoreA=? "+
+					" where id = ? ";
+		PreparedStatement ptmt = conn.prepareStatement(sql);
+		
+		ptmt.setInt(1,score);
+		ptmt.setInt(2, id);
+		ptmt.execute();
+		
+		
+	}
+	
+	
+	public void updateUserB(int score,int id) throws SQLException{
+		Connection conn = DBConnection.getConnection();
+		String sql =""+
+					" update  user "+
+					" set scoreB=? "+
 					" where id = ? ";
 		PreparedStatement ptmt = conn.prepareStatement(sql);
 		

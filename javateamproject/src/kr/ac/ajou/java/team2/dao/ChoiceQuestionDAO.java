@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import kr.ac.ajou.java.team2.Model.ChoiceQuestion;
+import kr.ac.ajou.java.team2.Model.Question;
 import kr.ac.ajou.java.team2.Model.User;
 import kr.ac.ajou.java.team2.db.DBConnection;
 
@@ -23,10 +24,15 @@ public class ChoiceQuestionDAO {
 		ResultSet rs = ptmt.executeQuery();
 		while(rs.next()){
 			choiceQuestion = new ChoiceQuestion();
-			choiceQuestion.setChoiceQuestionNum(rs.getInt("questionNum"));
-			choiceQuestion.setChoiceQuestionAnswer(rs.getString("answer"));
-		
+			choiceQuestion.setQuestionNum(rs.getInt("questionNum"));
+			choiceQuestion.setCorrectAnswer(rs.getString("correctAnswer"));
+			choiceQuestion.setAnwerA(rs.getString("answerA"));
+			choiceQuestion.setAnswerB(rs.getString("answerB"));
+			choiceQuestion.setAnswerC(rs.getString("answerC"));
+			choiceQuestion.setAnswerD(rs.getString("answerD"));
+			choiceQuestion.setQuestion(rs.getString("question"));
 		}
+		
 		return choiceQuestion;
 	}
 	
