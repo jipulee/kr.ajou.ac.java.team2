@@ -125,16 +125,16 @@ public class PrintResultFrame extends JFrame {
 		});
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
+			gl_panel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGap(154)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(name, GroupLayout.PREFERRED_SIZE, 171, Short.MAX_VALUE)
 						.addComponent(scoreA, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
-						.addComponent(scoreB, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-					.addContainerGap(151, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
-					.addContainerGap(421, Short.MAX_VALUE)
+						.addComponent(scoreB, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(name, GroupLayout.PREFERRED_SIZE, 339, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(83, Short.MAX_VALUE))
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap(487, Short.MAX_VALUE)
 					.addComponent(save)
 					.addGap(32))
 		);
@@ -149,7 +149,7 @@ public class PrintResultFrame extends JFrame {
 					.addComponent(scoreB)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(save)
-					.addContainerGap(32, Short.MAX_VALUE))
+					.addContainerGap(124, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
