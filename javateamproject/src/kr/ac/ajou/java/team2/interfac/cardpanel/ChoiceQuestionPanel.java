@@ -43,23 +43,12 @@ public class ChoiceQuestionPanel extends JPanel {
 		B.setText(cqa.putAnswerB(questionNum));
 		C.setText(cqa.putAnwerC(questionNum));
 		D.setText(cqa.putAnwerD(questionNum));
+		}else if(questionNum==20){
+			next.setEnabled(false);
 		}
 		
 	}
-	
-	public void setPreviousQuestion(){
-		if(questionNum>1){
-		questionNum-=1;
-		lblNewLabel_2.setText(cqa.putQuestion(questionNum));
-		lblNewLabel_1.setText("Question"+" "+questionNum);
-		A.setText(cqa.putAnwerA(questionNum));
-		B.setText(cqa.putAnswerB(questionNum));
-		C.setText(cqa.putAnwerC(questionNum));
-		D.setText(cqa.putAnwerD(questionNum));	
-		}
-	}
-	
-	
+		
 
 	public String getUserAnswer(){
 		//System.out.println(A.isSelected());
@@ -169,9 +158,6 @@ public class ChoiceQuestionPanel extends JPanel {
 		setLayout(groupLayout);
 
 	}
-	
-
-		
 	
 	
 }

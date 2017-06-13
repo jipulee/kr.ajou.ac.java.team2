@@ -1,0 +1,4 @@
+Name: lijipu
+Id:1
+ScoreA: 9
+ScoreB:8

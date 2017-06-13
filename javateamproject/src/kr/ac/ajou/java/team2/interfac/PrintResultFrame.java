@@ -12,6 +12,8 @@ import kr.ac.ajou.java.team2.action.PrintResultAction;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
@@ -114,7 +116,13 @@ public class PrintResultFrame extends JFrame {
 		JLabel scoreB = new JLabel("ScoreB: "+pra.getScoreB());
 		scoreB.setFont(new Font("Dialog", Font.ITALIC, 30));
 		
-		JButton print = new JButton("Print");
+		JButton save = new JButton("Save");
+		save.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pra.saveMessage();
+				JOptionPane.showMessageDialog(null, "Save successfully!");  
+			}
+		});
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
@@ -127,7 +135,7 @@ public class PrintResultFrame extends JFrame {
 					.addContainerGap(151, Short.MAX_VALUE))
 				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
 					.addContainerGap(421, Short.MAX_VALUE)
-					.addComponent(print)
+					.addComponent(save)
 					.addGap(32))
 		);
 		gl_panel.setVerticalGroup(
@@ -140,7 +148,7 @@ public class PrintResultFrame extends JFrame {
 					.addGap(48)
 					.addComponent(scoreB)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(print)
+					.addComponent(save)
 					.addContainerGap(32, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);

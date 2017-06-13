@@ -83,12 +83,20 @@ public class MenuFrame extends JFrame {
 				setVisible(false);
 			}
 		});
+		
+		JButton exit = new JButton("Exit");
+		exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGap(44)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(exit, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
 						.addComponent(score, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
 						.addComponent(start, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(77, Short.MAX_VALUE))
@@ -100,9 +108,10 @@ public class MenuFrame extends JFrame {
 					.addComponent(start, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(score, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(59, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(exit, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(38, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 	}
-
 }

@@ -38,17 +38,12 @@ public class PartBquesPanel extends JPanel {
 		questionNum+=1;
 		txtrHelloHello.setText(pbqa.putQuestion(questionNum));
 		lblNewLabel.setText("Question"+" "+questionNum);
+		}else if(questionNum==10){
+			next.setEnabled(false);
+			
 		}
 	}
 	
-	
-	public void setPreviousQuestion(){
-		if(questionNum>1){
-		questionNum-=1;
-		txtrHelloHello.setText(pbqa.putQuestion(questionNum));
-		lblNewLabel.setText("Question"+" "+questionNum);
-		}
-	}
 
 	/**
 	 * Create the panel.
@@ -63,7 +58,7 @@ public class PartBquesPanel extends JPanel {
 		textField.setColumns(10);
 		
 		txtrHelloHello = new JTextArea();
-		txtrHelloHello.setText("asdasasdasdasdasdadasd");
+		txtrHelloHello.setText(pbqa.putQuestion(questionNum));
 		
 		next = new JButton("Next");
 		next.addActionListener(new ActionListener() {
