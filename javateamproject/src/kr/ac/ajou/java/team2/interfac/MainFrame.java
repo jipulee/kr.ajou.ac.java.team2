@@ -82,10 +82,9 @@ public class MainFrame extends JFrame {
 		
 		
 //*********************************************************************************************************************************************************************		
+		
 		/*here is submit button action */
-		
-		
-		
+			
 		JButton btnNewButton_3 = new JButton("Submit");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -191,6 +190,7 @@ public class MainFrame extends JFrame {
 		partB = new JButton("Part B");
 		partB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				CardLayout cl = (CardLayout)(cardPanel.getLayout());
 				cl.show(cardPanel, THREE);
 				partB.setEnabled(false);
