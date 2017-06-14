@@ -58,7 +58,18 @@ public class PrintResultFrame extends JFrame {
 		JButton exit = new JButton("Exit");
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0); 
+				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							LoginFrame frame = new LoginFrame();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
 			}
 		});
 		

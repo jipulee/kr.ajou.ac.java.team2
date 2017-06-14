@@ -30,16 +30,5 @@ public class DBConnection {
 	public static Connection getConnection(){
 		return conn;
 	}
-	
-//	public void DataBaseConncetion(){
-//		
-//
-//		
-//		Statement stmt = conn.createStatement();
-//		ResultSet nameRs= stmt.executeQuery("select name from user");
-//		ResultSet passwordRs= stmt.executeQuery("select password from user");
-//		
-//	}
-	
-
+		
 }

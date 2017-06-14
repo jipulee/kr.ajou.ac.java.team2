@@ -1,4 +1,4 @@
 Name: lijipu
 Id:1
 ScoreA: 9
-ScoreB:4
+ScoreB:0

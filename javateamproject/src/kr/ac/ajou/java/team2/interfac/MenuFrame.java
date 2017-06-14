@@ -84,10 +84,21 @@ public class MenuFrame extends JFrame {
 			}
 		});
 		
-		JButton exit = new JButton("Exit");
+		JButton exit = new JButton("Login out");
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							LoginFrame frame = new LoginFrame();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
 			}
 		});
 		GroupLayout gl_panel = new GroupLayout(panel);
