@@ -65,8 +65,8 @@ public class RegisterFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				RegisterAction ra = new RegisterAction();
 				if(ra.checkUserName(username.getText(),password.getText(),realname.getText())==3){
-				ra.Register(username.getText(), password.getText(), realname.getText());
-				 if(e.getSource() == Confirm)  
+					ra.Register(username.getText(), password.getText(), realname.getText());
+					if(e.getSource() == Confirm)  
 			        {  
 					 	JOptionPane.showMessageDialog(null, "Register success!!", null,JOptionPane.WARNING_MESSAGE);  
 			            EventQueue.invokeLater(new Runnable() {

@@ -28,25 +28,27 @@ public class RegisterAction {
 	}
 	
 	public int checkUserName(String userName,String password,String realname){
-		int a =0;
-		if(userName.equals("")||password.equals("")||realname.equals("")){
-			a=1;
-		}else{
-			try {
-				List<User> users = userDao.queryUser();
-				for (int i = 0; i < users.size(); i++) {
-					if(users.get(i).getName().equals(userName)){	
-						a=2;
-					}else{
-						
-						a=3;
-					}
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}	
-		}
+		int a =3;
+		List<User> users = null;
+		try {
+			users = userDao.queryUser();
+			}
+		 catch (Exception e) {
+			e.printStackTrace();
+		}	
 		
-		return a;
+		
+		if(userName.equals("")||password.equals("")||realname.equals("")){
+			return a=1;
+		}else{
+			
+			for (int i = 0; i < users.size(); i++) {
+				if(users.get(i).getName().equals(userName)){	
+					return a=2;
+				}
+			}
+			
+			return a;
+		}
 	}	
 }
